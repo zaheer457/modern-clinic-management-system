@@ -1,0 +1,32 @@
+# Environment and secret configuration
+.env
+.env.*
+!.env.example
+
+# Database backups and dumps
+*.sql
+*.sql.gz
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
+
+# Keep local setup and database files out of GitHub
+setup.php
+clinic_management.sql
+
+# Patient-uploaded files may contain private information
+/uploads/patients/

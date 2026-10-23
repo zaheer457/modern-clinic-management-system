@@ -1,0 +1,2090 @@
+/* =========================================================
+   MODERN CLINIC — COHESIVE MIDNIGHT AQUA REFINEMENT
+   Site-wide visual polish; does not change application logic.
+========================================================= */
+:root {
+    --mc-bg: #081323;
+    --mc-panel: #102238;
+    --mc-panel-2: #0b1a2b;
+    --mc-line: rgba(143,184,211,.16);
+    --mc-text: #e8f2fc;
+    --mc-muted: #9bb0c4;
+    --mc-aqua: #5eead4;
+    --mc-blue: #38bdf8;
+}
+
+html, body { background-color:#081323 !important; color:#e8f2fc; }
+body { background:radial-gradient(ellipse at 4% 0%,rgba(56,189,248,.11),transparent 34%),radial-gradient(ellipse at 96% 14%,rgba(45,212,191,.075),transparent 31%),#081323 !important; }
+main { min-height:calc(100vh - 80px); }
+
+/* Consistent navigation */
+.clinic-nav { min-height:74px; background:rgba(5,14,26,.93)!important; border-bottom:1px solid rgba(94,234,212,.15); box-shadow:0 12px 34px rgba(0,0,0,.22); backdrop-filter:blur(18px); }
+.clinic-nav .container { max-width:1240px; }
+.navbar-brand { display:inline-flex; align-items:center; color:#f4f9ff!important; font-size:1.22rem; letter-spacing:-.045em; }
+.navbar-brand span:last-child { color:#5eead4!important; }
+.brand-mark { width:35px; height:35px; border-radius:11px; display:inline-flex; align-items:center; justify-content:center; background:linear-gradient(135deg,#38bdf8,#2dd4bf)!important; color:#061521; box-shadow:0 7px 20px rgba(45,212,191,.2); }
+.clinic-nav .nav-link { padding:.65rem .78rem!important; border-radius:10px; color:#c0d0df!important; font-size:.88rem; font-weight:650; transition:background .2s,color .2s; }
+.clinic-nav .nav-link:hover,.clinic-nav .nav-link:focus { background:rgba(94,234,212,.08); color:#5eead4!important; }
+.clinic-nav .btn { border-radius:11px!important; }
+.navbar-toggler { color:#e8f2fc!important; border:1px solid rgba(143,184,211,.22)!important; border-radius:10px; }
+
+/* Unified typography and surfaces */
+main h1, main h2, main h3, main h4, main h5, main h6 { color:#f1f7ff; letter-spacing:-.025em; }
+main p, main .text-secondary { color:#a7bacb!important; }
+main .bg-white, main section.bg-white, main .bg-light { background:transparent!important; }
+.section, .section.bg-white { padding-top:68px; padding-bottom:68px; background:transparent!important; }
+.section-title { font-weight:850; letter-spacing:-.045em; }
+.section-kicker { color:#5eead4!important; font-size:.72rem; font-weight:850; letter-spacing:.13em; text-transform:uppercase; }
+.container { --bs-gutter-x:1.5rem; }
+
+/* Buttons: one consistent premium gradient */
+.btn { border-radius:11px; font-weight:750; transition:transform .2s ease,box-shadow .2s ease,background .2s ease; }
+.btn:hover { transform:translateY(-1px); }
+.btn-primary { color:#061521!important; background:linear-gradient(135deg,#5eead4,#38bdf8)!important; border:0!important; box-shadow:0 9px 24px rgba(45,212,191,.15); }
+.btn-primary:hover { background:linear-gradient(135deg,#a7f3d0,#7dd3fc)!important; box-shadow:0 12px 28px rgba(45,212,191,.22); }
+.btn-outline-primary { color:#76f1df!important; border:1px solid rgba(94,234,212,.42)!important; background:rgba(94,234,212,.035)!important; }
+.btn-outline-primary:hover { color:#061521!important; background:#5eead4!important; }
+.btn-outline-dark { color:#dbe8f5!important; border-color:rgba(143,184,211,.35)!important; background:rgba(255,255,255,.025)!important; }
+.btn-outline-dark:hover { color:#061521!important; border-color:#5eead4!important; background:#5eead4!important; }
+
+/* Cards are compact, aligned and consistent */
+.doctor-card,.dept-card,.service-card,.review-card,.panel,.auth-card,.card,.contact-card,.faq-item,.stat-card,.info-card,
+.patient-stat-card,.patient-profile-card,.department-stat-item,.service-feature-card {
+    color:#e8f2fc!important;
+    background:linear-gradient(145deg,rgba(18,41,64,.97),rgba(8,25,42,.98))!important;
+    border:1px solid rgba(143,184,211,.16)!important;
+    border-radius:18px!important;
+    box-shadow:0 15px 36px rgba(0,0,0,.18)!important;
+}
+.doctor-card,.dept-card,.service-card,.review-card,.info-card,.contact-card,.faq-item,.stat-card { transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+.doctor-card:hover,.dept-card:hover,.service-card:hover,.review-card:hover,.info-card:hover,.contact-card:hover,.faq-item:hover,.stat-card:hover { transform:translateY(-4px); border-color:rgba(94,234,212,.38)!important; box-shadow:0 22px 44px rgba(0,0,0,.26)!important; }
+.card-body { padding:20px!important; }
+.doctor-card h5,.dept-card h5,.service-card h5,.card-title,.patient-profile-card-heading h2 { color:#f4f9ff!important; font-weight:800; }
+.doctor-card p,.dept-card p,.service-card p,.card-text { color:#a7bacb!important; }
+.pill { display:inline-flex; align-items:center; padding:6px 10px; border-radius:999px; background:rgba(94,234,212,.09)!important; border:1px solid rgba(94,234,212,.19)!important; color:#85f5e5!important; font-size:.72rem; font-weight:800; }
+.doctor-photo { min-height:205px; background-position:center 25%; background-size:cover; position:relative; }
+.doctor-photo:after { content:""; position:absolute; inset:45% 0 0; background:linear-gradient(transparent,rgba(7,18,31,.38)); pointer-events:none; }
+.stat-card { min-height:100px!important; padding:18px!important; }
+.stat-number { color:#5eead4!important; font-size:1.8rem!important; }
+
+/* Homepage hero — image + dark readable overlay */
+.hero { position:relative; min-height:555px; padding:66px 0 72px!important; overflow:hidden; background:linear-gradient(115deg,rgba(5,15,28,.97) 0%,rgba(8,27,44,.91) 52%,rgba(7,36,49,.78) 100%),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1900&q=85") center/cover no-repeat!important; border-bottom:1px solid rgba(94,234,212,.15); }
+.hero h1 { color:#f4f9ff!important; max-width:650px; font-size:clamp(2.45rem,4.5vw,4.1rem)!important; line-height:1.08; font-weight:850; }
+.hero p { color:#c0d0df!important; }
+.hero-art { min-height:390px; height:clamp(340px,38vw,430px); border-radius:25px!important; border:1px solid rgba(94,234,212,.25)!important; background:linear-gradient(180deg,rgba(6,20,34,.06),rgba(6,20,34,.18)),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1100&q=85") center/cover no-repeat!important; box-shadow:0 28px 70px rgba(0,0,0,.32)!important; }
+.floating-card { max-width:290px; padding:15px 17px!important; border-radius:15px!important; background:rgba(7,23,39,.92)!important; color:#e8f2fc!important; border:1px solid rgba(94,234,212,.2)!important; backdrop-filter:blur(15px); }
+.floating-card strong { color:#f4f9ff; }
+
+/* Public page heroes / top containers */
+.page-hero,.doctors-hero,.services-hero,.about-hero,.department-detail-hero,.departments-hero {
+    color:#e8f2fc;
+}
+.doctors-hero,.departments-hero,.department-detail-hero,.services-hero,.about-hero {
+    background:radial-gradient(ellipse at 85% 10%,rgba(45,212,191,.12),transparent 36%),linear-gradient(135deg,#0a1c30,#0c263c 62%,#0b303b)!important;
+}
+.doctors-hero-panel,.departments-hero-panel,.department-hero-layout,.services-hero-panel,.about-hero-content,
+.doctors-hero .container > *, .departments-hero .container > * {
+    border-color:rgba(143,184,211,.16);
+}
+.doctors-hero h1,.departments-hero h1,.department-detail-title,.services-hero h1,.about-hero .section-title { color:#f4f9ff!important; }
+.doctors-hero p,.departments-hero p,.department-detail-description,.services-hero p,.about-hero-description { color:#b4c7d8!important; }
+.department-breadcrumb { display:none!important; }
+.department-detail-hero { padding-top:44px!important; }
+
+/* Search, filters and all forms */
+input:not([type=checkbox]):not([type=radio]):not([type=submit]),select,textarea,.form-control,.form-select {
+    color:#eaf4ff!important; background:#0a1a2b!important; border:1px solid #2b465e!important; border-radius:11px!important;
+}
+input::placeholder,textarea::placeholder,.form-control::placeholder { color:#8298ad!important; }
+.form-control:focus,.form-select:focus,select:focus,textarea:focus,input:focus { border-color:#5eead4!important; box-shadow:0 0 0 .22rem rgba(94,234,212,.12)!important; }
+.form-label,label { color:#c7d8e7; }
+.form-check-input { background-color:#10253a; border-color:#476179; }
+.form-check-input:checked { background-color:#2dd4bf; border-color:#2dd4bf; }
+
+/* Tables and appointment booking panels */
+.table { --bs-table-color:#dce8f5; --bs-table-bg:transparent; --bs-table-border-color:rgba(143,184,211,.13); }
+.table thead th { color:#8faabe; background:rgba(94,234,212,.035); font-size:.72rem; letter-spacing:.07em; }
+.table td { color:#c9d8e8; }
+.table-hover tbody tr:hover>* { --bs-table-bg:rgba(94,234,212,.05); color:#fff; }
+.appointment-page,.appointment-booking-page { color:#e8f2fc; }
+.appointment-page .container,.appointment-booking-page .container { max-width:1120px; }
+.appointment-page .card,.appointment-booking-page .card { border-radius:18px!important; }
+
+/* Patient pages: align with site-wide dark aqua theme */
+.patient-profile-page,.edit-profile-page { background:radial-gradient(ellipse at 0 0,rgba(56,189,248,.09),transparent 40%),#081323!important; }
+.patient-profile-intro h1,.patient-profile-heading h1 { color:#f1f7ff!important; }
+.patient-profile-intro p,.patient-profile-heading p { color:#9bb0c4!important; }
+.patient-profile-banner { border:1px solid rgba(94,234,212,.19)!important; }
+.patient-stat-card,.patient-profile-card { background:linear-gradient(145deg,#122940,#0a1b2d)!important; border-color:rgba(143,184,211,.16)!important; }
+.patient-stat-number,.patient-doctor-name { color:#f1f7ff!important; }
+.patient-stat-label,.patient-table-subtitle,.patient-appointments-footer p { color:#9bb0c4!important; }
+.patient-profile-card-heading { background:linear-gradient(110deg,#102940,#0d2538)!important; border-color:rgba(143,184,211,.14)!important; }
+.patient-profile-card-heading h2 { color:#f4f9ff!important; }
+.patient-profile-card-heading p { color:#9bb0c4!important; }
+.patient-appointment-table th { background:rgba(94,234,212,.035)!important; color:#9bb0c4!important; }
+.patient-appointment-table td { border-color:rgba(143,184,211,.12)!important; color:#c9d8e8!important; }
+.patient-home-button { background:linear-gradient(135deg,#102940,#0b2034)!important; color:#85f5e5!important; border-color:rgba(94,234,212,.23)!important; }
+.patient-home-button:hover { background:linear-gradient(135deg,#5eead4,#38bdf8)!important; color:#061521!important; }
+
+/* About and services: avoid mismatched light surfaces */
+.about-page,.services-page,.contact-page,.faq-page,.doctors-page,.departments-page { background:transparent!important; color:#e8f2fc!important; }
+.about-hero { background:linear-gradient(115deg,rgba(5,15,28,.96),rgba(9,32,49,.9)),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat!important; }
+.about-badge,.services-hero-badge { background:rgba(94,234,212,.08)!important; border-color:rgba(94,234,212,.2)!important; color:#85f5e5!important; }
+.services-page section,.about-page section { background-color:transparent!important; }
+
+/* Footer: premium matching brand finish */
+.footer { margin-top:0!important; color:#9eafc3!important; background:linear-gradient(180deg,#0a1a2b,#050d18)!important; border-top:1px solid rgba(94,234,212,.16)!important; }
+.footer .container { max-width:1200px; }
+.footer h4,.footer h6 { color:#eff7ff!important; font-weight:800; }
+.footer h4 { letter-spacing:-.04em; }
+.footer p { color:#91a8bb!important; line-height:1.8; font-size:.9rem; }
+.footer a { display:inline-block; margin:0 10px 8px 0; color:#a6bbce!important; text-decoration:none; transition:color .2s; }
+.footer a:hover { color:#5eead4!important; }
+.footer-bottom { border-top:1px solid rgba(139,168,192,.11); color:#8195aa!important; font-size:.82rem; }
+
+/* Login page: no footer and better viewport fit */
+body:has(.clinic-login-page) .footer { display:none!important; }
+body:has(.clinic-login-page) main { padding-top:0!important; }
+.clinic-login-page { min-height:100vh!important; padding:28px 18px!important; background:radial-gradient(ellipse at 0 0,rgba(56,189,248,.12),transparent 38%),#081323!important; }
+.clinic-login-layout,.clinic-register-layout { border:1px solid rgba(94,234,212,.15)!important; border-radius:23px!important; box-shadow:0 25px 70px rgba(0,0,0,.3)!important; }
+.clinic-login-form,.clinic-register-form { background:#0b1b2d!important; }
+.clinic-login-form h2,.clinic-register-form h2 { color:#f1f7ff!important; }
+.clinic-login-form p,.clinic-register-form p { color:#9bb0c4!important; }
+
+/* Registration / login controls stay compact */
+.clinic-login-container { max-width:1000px!important; }
+.clinic-register-container { max-width:1040px!important; }
+.clinic-login-layout { min-height:550px!important; }
+
+/* Admin workspace */
+.admin-page { background:#081323!important; color:#e8f2fc!important; }
+.admin-page .sidebar { background:radial-gradient(circle at 12% 0%,rgba(45,212,191,.12),transparent 32%),linear-gradient(180deg,#0b1b2d,#071321 65%,#050d17)!important; }
+.admin-page .admin-main { background:transparent!important; }
+.admin-page .admin-top { position:sticky; top:0; z-index:1000; min-height:78px; height:auto; padding:14px 28px; background:linear-gradient(100deg,rgba(7,20,35,.97) 0%,rgba(9,34,50,.94) 65%,rgba(8,41,50,.87)),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=75") right 38%/cover no-repeat!important; border-bottom:1px solid rgba(94,234,212,.15)!important; color:#f0f7ff!important; }
+.admin-page .admin-top strong { color:#f4f9ff!important; font-size:1rem; }
+.admin-page .admin-top>div:last-child { padding:9px 13px; border:1px solid rgba(94,234,212,.15); border-radius:999px; background:rgba(8,24,40,.78); color:#c9d9e8; font-size:.83rem; }
+.admin-page .admin-content { width:100%; max-width:1580px; padding:25px!important; }
+.admin-page .admin-content .panel { padding:21px!important; border-radius:18px!important; }
+.admin-page .admin-content .metric { min-height:125px!important; padding:19px!important; border-radius:17px!important; }
+.admin-page .admin-content .section-title { color:#f1f7ff!important; }
+.admin-page .admin-content .text-secondary { color:#9bb0c4!important; }
+.admin-page .dashboard-welcome { min-height:220px!important; padding:28px 30px!important; border-radius:22px!important; background:linear-gradient(100deg,rgba(8,23,39,.98) 0%,rgba(9,34,50,.91) 58%,rgba(8,41,50,.72)),url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1500&q=80") right center/cover no-repeat!important; border-color:rgba(94,234,212,.2)!important; }
+.admin-page .dashboard-welcome h1 { color:#f4f9ff!important; }
+.admin-page .dashboard-welcome p { color:#b4c7d8!important; }
+.admin-page .admin-content .form-label,.admin-page .admin-content label { color:#c7d8e7!important; }
+.admin-page .admin-content .btn { min-height:38px; }
+
+/* Reduce oversized sections and improve mobile rhythm */
+@media (max-width: 991px) {
+    .clinic-nav .navbar-collapse { padding:12px 0 16px; }
+    .clinic-nav .navbar-nav { align-items:stretch!important; }
+    .hero { min-height:auto; padding:54px 0!important; }
+    .hero-art { min-height:300px; height:340px; }
+    .section,.section.bg-white { padding-top:48px; padding-bottom:48px; }
+    .admin-page .admin-content { padding:19px!important; }
+    .admin-page .admin-top { position:relative; }
+}
+@media (max-width: 767px) {
+    .hero { padding:40px 0!important; }
+    .hero h1 { font-size:clamp(2rem,8vw,3rem)!important; }
+    .hero-art { height:290px; min-height:260px; }
+    .floating-card { left:10px!important; bottom:12px!important; }
+    .section,.section.bg-white { padding-top:38px; padding-bottom:38px; }
+    .card-body { padding:17px!important; }
+    .admin-page .admin-content { padding:14px!important; }
+    .admin-page .dashboard-welcome { padding:22px!important; }
+    .admin-page .admin-top { gap:12px; padding:13px 16px; }
+}
+@media (max-width: 480px) {
+    .container { --bs-gutter-x:1.1rem; }
+    .hero-art { height:245px; min-height:245px; border-radius:18px!important; }
+    .patient-profile-banner { border-radius:17px!important; }
+    .admin-page .admin-top { align-items:flex-start; flex-direction:column; }
+}
+
+/* =========================================================
+   PAGE-SPECIFIC REFINEMENTS
+========================================================= */
+.doctors-page,.doctor-profile-page,.appointment-page,.my-appointments-page,
+.departments-page,.services-page,.about-page,.contact-page,.faq-page,
+.department-detail-hero,.department-content-section,.department-stats-section,
+.department-services-section,.department-cta-section {
+    background-color:transparent!important;
+    color:#e8f2fc!important;
+}
+
+/* Doctors directory: compact cards, clear actions and readable search */
+.doctors-hero { margin:12px 12px 0!important; padding:35px 0 30px!important; border-radius:24px!important; }
+.doctors-main-title { color:#f4f9ff!important; font-size:clamp(2rem,4vw,3.35rem)!important; }
+.doctors-hero-description { color:#b4c7d8!important; }
+.doctors-search-panel { padding:17px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:17px!important; background:rgba(8,25,42,.82)!important; box-shadow:0 14px 36px rgba(0,0,0,.18)!important; }
+.doctors-directory { padding-top:32px!important; }
+.doctors-directory-heading h2,.doctors-directory-heading h3 { color:#f1f7ff!important; }
+.doctors-result-count { color:#85f5e5!important; }
+.doctor-directory-card { height:100%; overflow:hidden; border:1px solid rgba(143,184,211,.16)!important; border-radius:18px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; box-shadow:0 15px 34px rgba(0,0,0,.2)!important; transition:transform .22s,border-color .22s,box-shadow .22s; }
+.doctor-directory-card:hover { transform:translateY(-5px); border-color:rgba(94,234,212,.42)!important; box-shadow:0 22px 42px rgba(0,0,0,.27)!important; }
+.doctor-directory-image-wrap { height:220px!important; background:#0b1b2d!important; }
+.doctor-directory-image { object-fit:cover; }
+.doctor-directory-body { padding:19px!important; }
+.doctor-directory-name { color:#f4f9ff!important; font-size:1.1rem!important; font-weight:850!important; }
+.doctor-directory-specialty,.doctor-directory-qualification,.doctor-directory-meta { color:#a7bacb!important; }
+.doctor-directory-actions { display:flex; flex-wrap:wrap; gap:9px!important; margin-top:16px!important; }
+.doctor-profile-link,.doctor-appointment-link { min-height:38px; display:inline-flex; align-items:center; justify-content:center; padding:9px 13px!important; border-radius:10px!important; font-size:.78rem!important; font-weight:800!important; text-decoration:none!important; }
+.doctor-profile-link { background:rgba(94,234,212,.08)!important; color:#85f5e5!important; border:1px solid rgba(94,234,212,.24)!important; }
+.doctor-appointment-link { background:linear-gradient(135deg,#5eead4,#38bdf8)!important; color:#061521!important; }
+
+/* Doctor profile: smaller, cohesive detail containers */
+.doctor-profile-page { padding-bottom:48px!important; }
+.doctor-profile-hero { padding:38px 0!important; background:radial-gradient(ellipse at 80% 10%,rgba(45,212,191,.12),transparent 34%),linear-gradient(135deg,#0a1c30,#0c263c 62%,#0b303b)!important; }
+.doctor-profile-breadcrumb { display:none!important; }
+.doctor-profile-photo-wrap { border-radius:20px!important; border:1px solid rgba(94,234,212,.22)!important; box-shadow:0 18px 45px rgba(0,0,0,.24)!important; }
+.doctor-profile-content { color:#e8f2fc!important; }
+.doctor-profile-name { color:#f4f9ff!important; }
+.doctor-profile-specialty,.doctor-profile-intro,.doctor-photo-caption { color:#b4c7d8!important; }
+.doctor-profile-main { padding-top:25px!important; }
+.doctor-combined-card,.doctor-schedule-panel { padding:22px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:18px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; box-shadow:0 15px 36px rgba(0,0,0,.18)!important; }
+.doctor-section-heading { color:#f4f9ff!important; }
+.doctor-about-text,.doctor-schedule-row-hours,.doctor-schedule-row-day { color:#a7bacb!important; }
+.doctor-qualification-box { border-radius:13px!important; background:rgba(94,234,212,.055)!important; border:1px solid rgba(94,234,212,.16)!important; }
+.doctor-combined-divider { border-color:rgba(143,184,211,.15)!important; }
+.doctor-hero-stat { padding:13px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:13px!important; background:rgba(8,25,42,.75)!important; }
+
+/* Appointment booking and patient appointment list */
+.appointment-hero { padding:38px 0 30px!important; background:radial-gradient(ellipse at 80% 10%,rgba(45,212,191,.12),transparent 36%),linear-gradient(135deg,#0a1c30,#0c263c 62%,#0b303b)!important; }
+.appointment-hero h1,.appointment-heading h1 { color:#f4f9ff!important; }
+.appointment-hero p,.appointment-heading p { color:#b4c7d8!important; }
+.appointment-shell,.appointment-form,.appointment-empty,.appointments-shell,.appointments-panel { color:#e8f2fc!important; }
+.appointment-shell { max-width:1100px!important; }
+.appointment-form,.appointment-empty,.appointments-panel { padding:22px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:18px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; box-shadow:0 15px 36px rgba(0,0,0,.18)!important; }
+.appointment-help,.appointment-secure,.appointments-stat-label,.appointments-panel-footer { color:#9bb0c4!important; }
+.appointment-fee { border-radius:13px!important; background:rgba(94,234,212,.07)!important; border:1px solid rgba(94,234,212,.17)!important; }
+.appointment-submit,.booking-success-primary { border-radius:11px!important; }
+.appointments-heading h1,.appointments-panel-title { color:#f4f9ff!important; }
+.appointments-stat-card { padding:16px!important; border-radius:15px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; border:1px solid rgba(143,184,211,.16)!important; }
+.appointments-stat-number { color:#5eead4!important; }
+.appointments-panel-header,.appointments-filter-bar { background:rgba(94,234,212,.035)!important; border-color:rgba(143,184,211,.14)!important; }
+.appointments-table th { color:#9bb0c4!important; }
+.appointments-table td { color:#c9d8e8!important; }
+
+/* Department listing and detail pages */
+.departments-hero { padding:35px 0 30px!important; }
+.departments-hero-panel { padding:28px!important; border:1px solid rgba(94,234,212,.16)!important; border-radius:23px!important; background:linear-gradient(115deg,rgba(8,24,40,.96),rgba(10,39,54,.9))!important; box-shadow:0 20px 48px rgba(0,0,0,.2)!important; }
+.departments-hero-title { color:#f4f9ff!important; font-size:clamp(2.1rem,4vw,3.4rem)!important; }
+.departments-hero-text,.departments-section-description { color:#b4c7d8!important; }
+.departments-section { padding-top:38px!important; padding-bottom:42px!important; }
+.departments-section-title { color:#f4f9ff!important; }
+.department-modern-card { height:100%; padding:21px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:18px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; box-shadow:0 15px 36px rgba(0,0,0,.18)!important; transition:transform .22s,border-color .22s,box-shadow .22s; }
+.department-modern-card:hover { transform:translateY(-5px); border-color:rgba(94,234,212,.4)!important; box-shadow:0 23px 44px rgba(0,0,0,.25)!important; }
+.department-icon,.departments-kicker-icon,.department-total-icon { border-radius:14px!important; background:rgba(94,234,212,.09)!important; color:#5eead4!important; border:1px solid rgba(94,234,212,.16)!important; }
+.department-card-title { color:#f4f9ff!important; font-weight:850!important; }
+.department-card-description { color:#a7bacb!important; }
+.department-card-divider { border-color:rgba(143,184,211,.14)!important; }
+.department-explore-btn,.department-primary-btn,.department-cta-btn { border-radius:10px!important; background:linear-gradient(135deg,#5eead4,#38bdf8)!important; color:#061521!important; border:0!important; font-weight:850!important; }
+.department-secondary-btn,.department-back-btn { border-radius:10px!important; color:#85f5e5!important; border:1px solid rgba(94,234,212,.28)!important; background:rgba(94,234,212,.045)!important; }
+.department-detail-hero { padding:45px 0 40px!important; }
+.department-hero-layout { gap:32px!important; }
+.department-detail-title { color:#f4f9ff!important; }
+.department-detail-description,.department-hero-extra { color:#b4c7d8!important; }
+.department-visual-icon,.department-stat-icon,.department-empty-icon,.department-service-icon { color:#5eead4!important; background:rgba(94,234,212,.08)!important; border:1px solid rgba(94,234,212,.18)!important; }
+.department-floating-card { padding:14px 16px!important; border:1px solid rgba(94,234,212,.18)!important; border-radius:15px!important; background:rgba(8,25,42,.92)!important; box-shadow:0 14px 35px rgba(0,0,0,.2)!important; }
+.department-floating-card strong,.department-stat-item strong { color:#f4f9ff!important; }
+.department-floating-card span,.department-stat-item span { color:#9bb0c4!important; }
+.department-stat-item { padding:16px!important; border-radius:15px!important; }
+.department-doctor-card,.department-service-card,.department-cta-card { border-radius:17px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; border:1px solid rgba(143,184,211,.16)!important; }
+.department-doctor-info h3,.department-doctor-info h4,.department-service-card h3,.department-service-card h4 { color:#f4f9ff!important; }
+.department-doctor-info p,.department-service-card p { color:#a7bacb!important; }
+.department-back-section { padding-top:15px!important; }
+
+/* Service and about pages */
+.services-hero { padding:48px 0 40px!important; }
+.services-hero h1,.services-heading h2,.about-page h2,.about-page h3 { color:#f4f9ff!important; }
+.services-hero p,.service-description,.about-page p { color:#a7bacb!important; }
+.service-premium-card { height:100%; padding:21px!important; border:1px solid rgba(143,184,211,.16)!important; border-radius:18px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; box-shadow:0 15px 36px rgba(0,0,0,.18)!important; transition:transform .22s,border-color .22s,box-shadow .22s; }
+.service-premium-card:hover { transform:translateY(-5px); border-color:rgba(94,234,212,.4)!important; box-shadow:0 23px 44px rgba(0,0,0,.25)!important; }
+.service-icon-premium,.service-detail-item,.service-department-tag { background:rgba(94,234,212,.07)!important; color:#85f5e5!important; border-color:rgba(94,234,212,.16)!important; }
+.service-premium-card h3,.service-premium-card h4,.service-premium-card h5 { color:#f4f9ff!important; }
+.service-book-btn,.about-btn-primary,.about-btn-doctors { border-radius:10px!important; }
+.about-hero { padding:56px 0 50px!important; }
+.about-hero .section-title { font-size:clamp(2.3rem,4.5vw,3.8rem)!important; }
+.about-visual,.about-visual-main { border-radius:20px!important; }
+.about-info-card,.about-value-card { padding:20px!important; border-radius:17px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; border:1px solid rgba(143,184,211,.16)!important; }
+.about-card-icon,.about-value-icon { color:#5eead4!important; background:rgba(94,234,212,.08)!important; }
+
+/* Contact and FAQ consistency */
+.contact-hero,.faq-hero { padding:42px 0!important; background:radial-gradient(ellipse at 80% 10%,rgba(45,212,191,.11),transparent 35%),linear-gradient(135deg,#0a1c30,#0c263c 62%,#0b303b)!important; }
+.contact-hero h1,.faq-hero h1 { color:#f4f9ff!important; }
+.contact-hero p,.faq-hero-description { color:#b4c7d8!important; }
+.contact-grid,.faq-content { padding-top:30px!important; padding-bottom:40px!important; }
+.contact-card,.faq-item,.faq-help-panel { padding:19px!important; border-radius:17px!important; background:linear-gradient(145deg,#122940,#091a2b)!important; border:1px solid rgba(143,184,211,.16)!important; }
+.contact-card h3,.contact-card h4,.faq-item h3,.faq-item h4,.faq-section-heading { color:#f4f9ff!important; }
+.contact-card p,.contact-subtitle,.faq-answer-text { color:#a7bacb!important; }
+.faq-item button { color:#f1f7ff!important; }
+
+/* Auth panels: dark, consistent, no unnecessary footer on login */
+.clinic-login-form-panel,.clinic-register-form-panel { background:#0b1b2d!important; color:#e8f2fc!important; }
+.clinic-login-form-heading h2,.clinic-register-heading h1,.clinic-register-heading h2 { color:#f4f9ff!important; }
+.clinic-login-form-heading p,.clinic-register-heading p,.clinic-login-security,.clinic-register-security { color:#9bb0c4!important; }
+.clinic-login-field label,.clinic-register-field label { color:#c7d8e7!important; }
+.clinic-login-input,.clinic-register-input,.clinic-register-select { color:#eaf4ff!important; background:#071729!important; border-color:#2b465e!important; }
+.clinic-login-register,.clinic-register-login { color:#85f5e5!important; }
+
+@media(max-width:767px) {
+    .doctors-hero,.departments-hero-panel { margin-left:0!important; margin-right:0!important; padding:22px!important; border-radius:18px!important; }
+    .doctor-directory-image-wrap { height:180px!important; }
+    .doctor-directory-body { padding:14px!important; }
+    .doctor-combined-card,.doctor-schedule-panel,.appointment-form,.appointments-panel { padding:16px!important; }
+    .departments-section { padding-top:25px!important; }
+    .department-modern-card,.service-premium-card { padding:17px!important; }
+    .department-hero-layout { gap:20px!important; }
+    .doctor-profile-hero,.appointment-hero,.services-hero,.about-hero,.contact-hero,.faq-hero { padding:32px 0!important; }
+}
+
+/* =========================================================
+   MODERN CLINIC — COHESIVE REFINED THEME (FINAL OVERRIDES)
+   Balanced clinical palette: deep navy, clean mist, calm teal.
+   Compact page widths and cards; keeps existing PHP/functionality.
+========================================================= */
+:root {
+    --mc-navy: #102b43;
+    --mc-navy-deep: #081d30;
+    --mc-blue: #1686c4;
+    --mc-teal: #21a6a5;
+    --mc-ink: #19364d;
+    --mc-muted: #6c8192;
+    --mc-page: #f3f7fa;
+    --mc-card: #ffffff;
+    --mc-border: #dce6ed;
+    --mc-soft: #eaf5f8;
+}
+
+html { scroll-behavior: smooth; }
+body:not(.admin-page) {
+    background: #f3f7fa !important;
+    color: var(--mc-ink) !important;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.65;
+}
+body:not(.admin-page) main {
+    min-height: calc(100vh - 250px);
+    background: transparent !important;
+}
+body:not(.admin-page) .container { max-width: 1160px; }
+body:not(.admin-page) main h1,
+body:not(.admin-page) main h2,
+body:not(.admin-page) main h3,
+body:not(.admin-page) main h4,
+body:not(.admin-page) main h5,
+body:not(.admin-page) main h6 {
+    color: var(--mc-navy) !important;
+    letter-spacing: -.025em;
+}
+body:not(.admin-page) main p,
+body:not(.admin-page) main .text-secondary { color: var(--mc-muted) !important; }
+
+/* Dark, high-contrast navbar (never white) */
+body:not(.admin-page) .clinic-nav {
+    min-height: 70px;
+    padding: 9px 0;
+    background: rgba(8, 29, 48, .97) !important;
+    border-bottom: 1px solid rgba(94, 215, 215, .22) !important;
+    box-shadow: 0 8px 28px rgba(8, 29, 48, .14) !important;
+    backdrop-filter: blur(14px);
+}
+body:not(.admin-page) .clinic-nav .container { max-width: 1190px; }
+body:not(.admin-page) .clinic-nav .navbar-brand {
+    color: #f7fbff !important;
+    font-size: 1.2rem;
+    font-weight: 850;
+}
+body:not(.admin-page) .clinic-nav .navbar-brand span:last-child { color: #63d8d1 !important; }
+body:not(.admin-page) .clinic-nav .brand-mark {
+    width: 34px; height: 34px; margin-right: 8px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4bd0d0, #48a8e8) !important;
+    color: #08243a !important;
+}
+body:not(.admin-page) .clinic-nav .nav-link {
+    padding: 9px 12px !important;
+    border-radius: 9px;
+    color: #d3e1eb !important;
+    font-size: .87rem;
+    font-weight: 650;
+}
+body:not(.admin-page) .clinic-nav .nav-link:hover,
+body:not(.admin-page) .clinic-nav .nav-link:focus {
+    background: rgba(99, 216, 209, .1) !important;
+    color: #7be4de !important;
+}
+body:not(.admin-page) .clinic-nav .btn-primary {
+    padding: 9px 17px !important;
+    color: #08243a !important;
+    background: linear-gradient(135deg, #73e0d8, #73c9f3) !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+body:not(.admin-page) .navbar-toggler {
+    padding: 7px 10px;
+    color: #effaff !important;
+    border: 1px solid rgba(255,255,255,.25) !important;
+}
+
+/* Compact section rhythm and clean card surfaces */
+body:not(.admin-page) .section,
+body:not(.admin-page) .section.bg-white {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
+    background: transparent !important;
+}
+body:not(.admin-page) .section-title { font-weight: 850; }
+body:not(.admin-page) .section-kicker,
+body:not(.admin-page) .doctors-kicker,
+body:not(.admin-page) .departments-kicker,
+body:not(.admin-page) .services-kicker {
+    color: #168f9a !important;
+    font-weight: 850;
+    letter-spacing: .12em;
+}
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .review-card,
+body:not(.admin-page) .panel,
+body:not(.admin-page) .auth-card,
+body:not(.admin-page) .card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item,
+body:not(.admin-page) .stat-card,
+body:not(.admin-page) .info-card,
+body:not(.admin-page) .department-modern-card,
+body:not(.admin-page) .service-premium-card,
+body:not(.admin-page) .doctor-combined-card,
+body:not(.admin-page) .doctor-schedule-panel,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointments-panel,
+body:not(.admin-page) .department-cta-card {
+    color: var(--mc-ink) !important;
+    background: #fff !important;
+    border: 1px solid var(--mc-border) !important;
+    border-radius: 15px !important;
+    box-shadow: 0 7px 22px rgba(18, 51, 73, .055) !important;
+}
+body:not(.admin-page) .card-body { padding: 18px !important; }
+body:not(.admin-page) .doctor-card h5,
+body:not(.admin-page) .dept-card h5,
+body:not(.admin-page) .service-card h5,
+body:not(.admin-page) .card-title,
+body:not(.admin-page) .department-card-title,
+body:not(.admin-page) .service-premium-card h3,
+body:not(.admin-page) .service-premium-card h4,
+body:not(.admin-page) .service-premium-card h5 { color: var(--mc-navy) !important; }
+body:not(.admin-page) .doctor-card p,
+body:not(.admin-page) .dept-card p,
+body:not(.admin-page) .service-card p,
+body:not(.admin-page) .card-text,
+body:not(.admin-page) .department-card-description { color: var(--mc-muted) !important; }
+body:not(.admin-page) .doctor-card:hover,
+body:not(.admin-page) .dept-card:hover,
+body:not(.admin-page) .service-card:hover,
+body:not(.admin-page) .review-card:hover,
+body:not(.admin-page) .department-modern-card:hover,
+body:not(.admin-page) .service-premium-card:hover {
+    transform: translateY(-3px);
+    border-color: #a9d9df !important;
+    box-shadow: 0 14px 28px rgba(18, 51, 73, .09) !important;
+}
+body:not(.admin-page) .pill {
+    color: #147d88 !important;
+    background: #e7f7f7 !important;
+    border: 1px solid #ccecec !important;
+}
+
+/* Public page hero panels: dark navy remains the visual anchor */
+body:not(.admin-page) .hero,
+body:not(.admin-page) .doctors-hero,
+body:not(.admin-page) .departments-hero,
+body:not(.admin-page) .department-detail-hero,
+body:not(.admin-page) .services-hero,
+body:not(.admin-page) .about-hero,
+body:not(.admin-page) .contact-hero,
+body:not(.admin-page) .faq-hero,
+body:not(.admin-page) .appointment-hero {
+    color: #f2f8fc !important;
+    background-color: var(--mc-navy-deep) !important;
+}
+body:not(.admin-page) .hero {
+    min-height: 500px;
+    padding: 62px 0 58px !important;
+    background-image: linear-gradient(105deg, rgba(7, 26, 44, .97), rgba(10, 47, 67, .85) 58%, rgba(9, 52, 64, .70)), url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1900&q=85") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    border-bottom: 1px solid rgba(54, 170, 181, .2);
+}
+body:not(.admin-page) .hero h1,
+body:not(.admin-page) .doctors-hero h1,
+body:not(.admin-page) .departments-hero h1,
+body:not(.admin-page) .department-detail-title,
+body:not(.admin-page) .services-hero h1,
+body:not(.admin-page) .about-hero .section-title,
+body:not(.admin-page) .contact-hero h1,
+body:not(.admin-page) .faq-hero h1,
+body:not(.admin-page) .appointment-hero h1 { color: #f7fbff !important; }
+body:not(.admin-page) .hero p,
+body:not(.admin-page) .doctors-hero p,
+body:not(.admin-page) .departments-hero p,
+body:not(.admin-page) .department-detail-description,
+body:not(.admin-page) .services-hero p,
+body:not(.admin-page) .about-hero-description,
+body:not(.admin-page) .contact-hero p,
+body:not(.admin-page) .faq-hero-description,
+body:not(.admin-page) .appointment-hero p { color: #c7d8e3 !important; }
+body:not(.admin-page) .hero-art {
+    border: 1px solid rgba(119, 223, 224, .25) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 20px 44px rgba(0,0,0,.2) !important;
+}
+body:not(.admin-page) .doctors-hero-panel,
+body:not(.admin-page) .departments-hero-panel,
+body:not(.admin-page) .services-hero-panel,
+body:not(.admin-page) .about-hero-content {
+    padding: 25px !important;
+    border-radius: 18px !important;
+    background: rgba(255,255,255,.055) !important;
+    border: 1px solid rgba(177, 224, 231, .17) !important;
+}
+
+/* Forms should be readable and light, not black fields on dark panels */
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+body:not(.admin-page) select,
+body:not(.admin-page) textarea,
+body:not(.admin-page) .form-control,
+body:not(.admin-page) .form-select,
+body:not(.admin-page) .clinic-login-input,
+body:not(.admin-page) .clinic-register-input,
+body:not(.admin-page) .clinic-register-select {
+    color: #213e53 !important;
+    background: #fff !important;
+    border: 1px solid #d3e0e8 !important;
+    border-radius: 10px !important;
+    box-shadow: none;
+}
+body:not(.admin-page) input::placeholder,
+body:not(.admin-page) textarea::placeholder,
+body:not(.admin-page) .form-control::placeholder { color: #8799a6 !important; }
+body:not(.admin-page) .form-control:focus,
+body:not(.admin-page) .form-select:focus,
+body:not(.admin-page) select:focus,
+body:not(.admin-page) textarea:focus,
+body:not(.admin-page) input:focus {
+    border-color: #5bbec7 !important;
+    box-shadow: 0 0 0 .2rem rgba(33,166,165,.13) !important;
+}
+body:not(.admin-page) label,
+body:not(.admin-page) .form-label,
+body:not(.admin-page) .clinic-login-field label,
+body:not(.admin-page) .clinic-register-field label { color: #38576b !important; }
+body:not(.admin-page) .btn { border-radius: 10px; font-weight: 750; }
+body:not(.admin-page) .btn-primary,
+body:not(.admin-page) .department-explore-btn,
+body:not(.admin-page) .department-primary-btn,
+body:not(.admin-page) .department-cta-btn {
+    color: #fff !important;
+    background: linear-gradient(135deg, #167eb5, #159eaa) !important;
+    border: 0 !important;
+    box-shadow: 0 6px 15px rgba(22,126,181,.15) !important;
+}
+body:not(.admin-page) .btn-outline-primary,
+body:not(.admin-page) .department-secondary-btn,
+body:not(.admin-page) .department-back-btn {
+    color: #167ca0 !important;
+    border: 1px solid #b9dce4 !important;
+    background: #f5fbfc !important;
+}
+
+/* Smaller, consistent profile and booking panels */
+body:not(.admin-page) .doctor-profile-main { padding-top: 22px !important; }
+body:not(.admin-page) .doctor-combined-card,
+body:not(.admin-page) .doctor-schedule-panel,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointments-panel,
+body:not(.admin-page) .appointments-stat-card { padding: 19px !important; }
+body:not(.admin-page) .department-modern-card,
+body:not(.admin-page) .service-premium-card,
+body:not(.admin-page) .about-info-card,
+body:not(.admin-page) .about-value-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item { padding: 18px !important; }
+body:not(.admin-page) .appointment-shell { max-width: 1020px !important; }
+body:not(.admin-page) .patient-profile-shell { max-width: 960px !important; }
+body:not(.admin-page) .patient-profile-banner { border-radius: 17px !important; }
+body:not(.admin-page) .patient-stat-card { padding: 16px !important; }
+body:not(.admin-page) .patient-profile-card-heading { padding: 17px 20px !important; }
+
+/* Footer tied to the same dark navy header */
+body:not(.admin-page) .footer {
+    margin-top: 0 !important;
+    color: #c5d5e0 !important;
+    background: linear-gradient(135deg, #081d30, #0d3045) !important;
+    border-top: 1px solid rgba(94, 215, 215, .17);
+}
+body:not(.admin-page) .footer h4,
+body:not(.admin-page) .footer h6 { color: #f4f9fc !important; }
+body:not(.admin-page) .footer h4 span { color: #63d8d1 !important; }
+body:not(.admin-page) .footer p { color: #b5c8d5 !important; }
+body:not(.admin-page) .footer a {
+    display: block;
+    width: fit-content;
+    margin: 7px 0;
+    color: #c5d5e0 !important;
+    text-decoration: none;
+}
+body:not(.admin-page) .footer a:hover { color: #73e0d8 !important; }
+body:not(.admin-page) .footer-bottom {
+    color: #9fb4c2 !important;
+    background: rgba(0,0,0,.16) !important;
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+/* =========================================================
+   ADMIN: deep navy sidebar/header + clean compact light canvas
+========================================================= */
+.admin-page {
+    min-height: 100vh;
+    color: var(--mc-ink) !important;
+    background: #f2f6f9 !important;
+}
+.admin-page .sidebar {
+    width: 248px !important;
+    padding: 23px 16px !important;
+    background: linear-gradient(180deg, #0c263c 0%, #081d30 100%) !important;
+    border-right: 1px solid rgba(255,255,255,.07) !important;
+    box-shadow: 8px 0 28px rgba(8,29,48,.07);
+}
+.admin-page .sidebar .h4 { color: #f4f9fc !important; font-size: 1.15rem !important; }
+.admin-page .sidebar .brand-mark { background: linear-gradient(135deg,#73e0d8,#73c9f3) !important; color: #08243a !important; }
+.admin-page .sidebar .small.text-uppercase { color: #86a7ba !important; letter-spacing: .12em; }
+.admin-page .sidebar .side-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 3px 0 !important;
+    padding: 10px 12px !important;
+    border: 1px solid transparent !important;
+    border-radius: 10px !important;
+    color: #c1d3df !important;
+    font-size: .88rem;
+    transition: background .2s, color .2s, border-color .2s;
+}
+.admin-page .sidebar .side-link i { color: #7da6ba !important; }
+.admin-page .sidebar .side-link:hover,
+.admin-page .sidebar .side-link.active {
+    color: #fff !important;
+    background: linear-gradient(100deg, rgba(83,202,204,.16), rgba(61,153,197,.09)) !important;
+    border-color: rgba(106,220,218,.18) !important;
+    box-shadow: inset 3px 0 #62d5d0 !important;
+}
+.admin-page .sidebar .side-link:hover i,
+.admin-page .sidebar .side-link.active i { color: #75e2dc !important; }
+.admin-page .sidebar hr { border-color: rgba(255,255,255,.14) !important; }
+.admin-page .admin-main { margin-left: 248px !important; min-height: 100vh; background: #f2f6f9 !important; }
+.admin-page .admin-top {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height: 70px !important;
+    height: auto !important;
+    padding: 13px 26px !important;
+    color: #f4f9fc !important;
+    background: linear-gradient(100deg, rgba(8,29,48,.97), rgba(13,54,72,.92)), url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=70") right 35%/cover no-repeat !important;
+    border-bottom: 1px solid rgba(93,209,210,.2) !important;
+    box-shadow: 0 5px 18px rgba(8,29,48,.08) !important;
+}
+.admin-page .admin-top strong { color: #f7fbff !important; font-size: 1rem !important; }
+.admin-page .admin-top > div:last-child {
+    padding: 8px 12px !important;
+    color: #d9e8ef !important;
+    background: rgba(5,21,35,.58) !important;
+    border: 1px solid rgba(255,255,255,.15) !important;
+    border-radius: 999px !important;
+    font-size: .82rem;
+}
+.admin-page .admin-content {
+    width: 100%;
+    max-width: 1540px;
+    margin: 0 auto;
+    padding: 23px 25px 38px !important;
+    color: var(--mc-ink) !important;
+}
+.admin-page .admin-content h1,
+.admin-page .admin-content h2,
+.admin-page .admin-content h3,
+.admin-page .admin-content h4,
+.admin-page .admin-content h5 { color: var(--mc-navy) !important; }
+.admin-page .admin-content p,
+.admin-page .admin-content .text-secondary,
+.admin-page .admin-content .panel-subtitle { color: #708393 !important; }
+.admin-page .admin-content .panel,
+.admin-page .admin-content .table-card {
+    padding: 19px !important;
+    color: var(--mc-ink) !important;
+    background: #fff !important;
+    border: 1px solid #dfe7ed !important;
+    border-radius: 15px !important;
+    box-shadow: 0 7px 22px rgba(18,51,73,.05) !important;
+}
+.admin-page .admin-content .panel h5 { color: var(--mc-navy) !important; }
+.admin-page .admin-content .metric {
+    min-height: 112px !important;
+    padding: 17px !important;
+    color: var(--mc-ink) !important;
+    background: #fff !important;
+    border: 1px solid #dfe7ed !important;
+    border-radius: 14px !important;
+    box-shadow: 0 7px 20px rgba(18,51,73,.045) !important;
+}
+.admin-page .admin-content .metric:hover { border-color: #b9dfe1 !important; box-shadow: 0 12px 26px rgba(18,51,73,.08) !important; }
+.admin-page .admin-content .stat-number { color: #167fa4 !important; }
+.admin-page .admin-content .metric .text-secondary,
+.admin-page .admin-content .metric-foot,
+.admin-page .admin-content .metric-more { color: #788b99 !important; }
+.admin-page .admin-content .dashboard-welcome {
+    min-height: 195px !important;
+    padding: 25px 27px !important;
+    border-radius: 17px !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    background: linear-gradient(100deg, rgba(7,27,45,.97), rgba(11,55,73,.84) 65%, rgba(13,75,82,.64)), url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1400&q=75") right center/cover no-repeat !important;
+    box-shadow: 0 14px 32px rgba(8,29,48,.13) !important;
+}
+.admin-page .admin-content .dashboard-welcome h1,
+.admin-page .admin-content .dashboard-welcome h2 { color: #f7fbff !important; }
+.admin-page .admin-content .dashboard-welcome p { color: #c3d8e2 !important; }
+.admin-page .admin-content .welcome-kicker { color: #77e1db !important; }
+.admin-page .admin-content .welcome-date { color: #d3e6ed !important; }
+.admin-page .admin-content .care-note {
+    color: #167f89 !important;
+    background: #e8f7f6 !important;
+    border: 1px solid #ccebe8 !important;
+}
+.admin-page .admin-content .care-note strong { color: #17495b !important; }
+.admin-page .admin-content .quick-action { background: #fff !important; border-color: #dfe7ed !important; }
+.admin-page .admin-content .quick-action strong { color: #29485c !important; }
+.admin-page .admin-content .quick-action small { color: #788b99 !important; }
+.admin-page .admin-content .quick-action:hover { background: #f4fbfc !important; border-color: #b9dfe1 !important; }
+.admin-page .admin-content .table-responsive { border-color: #dfe7ed !important; border-radius: 12px; }
+.admin-page .admin-content .table { --bs-table-bg: #fff; --bs-table-color: #29485c; --bs-table-border-color: #e5edf2; }
+.admin-page .admin-content .table thead th { color: #627989 !important; background: #f0f6f8 !important; font-size: .78rem; }
+.admin-page .admin-content .table td { color: #38566a !important; vertical-align: middle; }
+.admin-page .admin-content .table-hover tbody tr:hover > * { --bs-table-bg: #f4fafb; color: #19364d !important; }
+.admin-page .admin-content .person-cell { color: #29485c !important; }
+.admin-page .admin-content .person-avatar { color: #147d88 !important; background: #e4f5f5 !important; border-color: #cce9e9 !important; }
+.admin-page .admin-content .appointment-date { color: #718595 !important; }
+.admin-page .admin-content .form-control,
+.admin-page .admin-content .form-select,
+.admin-page .admin-content input:not([type=checkbox]):not([type=radio]):not([type=submit]),
+.admin-page .admin-content select,
+.admin-page .admin-content textarea {
+    color: #213e53 !important;
+    background: #fff !important;
+    border: 1px solid #d3e0e8 !important;
+    border-radius: 9px !important;
+}
+.admin-page .admin-content .form-control:focus,
+.admin-page .admin-content .form-select:focus { border-color: #5bbec7 !important; box-shadow: 0 0 0 .2rem rgba(33,166,165,.13) !important; }
+.admin-page .admin-content label,
+.admin-page .admin-content .form-label { color: #38576b !important; }
+.admin-page .admin-content .btn-primary { color: #fff !important; background: linear-gradient(135deg,#167eb5,#159eaa) !important; border: 0 !important; }
+.admin-page .admin-content a:not(.btn) { color: #167fa4 !important; }
+.admin-page .admin-content a:not(.btn):hover { color: #0b526f !important; }
+.admin-page .admin-content .alert { color: #176b56 !important; background: #e7f7f0 !important; border: 1px solid #c8eadb !important; }
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .admin-page .sidebar {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;
+        inset: auto !important;
+        padding: 16px !important;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 5px;
+    }
+    .admin-page .sidebar > .h4 { width: 100%; margin-bottom: 7px !important; }
+    .admin-page .sidebar > .small.text-uppercase { width: 100%; margin: 5px 8px !important; }
+    .admin-page .sidebar .side-link { flex: 1 1 140px; }
+    .admin-page .sidebar hr { display: none; }
+    .admin-page .admin-main { margin-left: 0 !important; }
+    .admin-page .admin-top { position: relative; }
+}
+@media (max-width: 767px) {
+    body:not(.admin-page) .section,
+    body:not(.admin-page) .section.bg-white { padding-top: 36px !important; padding-bottom: 36px !important; }
+    body:not(.admin-page) .hero { min-height: 0; padding: 42px 0 !important; }
+    body:not(.admin-page) .doctors-hero-panel,
+    body:not(.admin-page) .departments-hero-panel,
+    body:not(.admin-page) .services-hero-panel,
+    body:not(.admin-page) .about-hero-content { padding: 19px !important; }
+    .admin-page .admin-content { padding: 16px !important; }
+    .admin-page .admin-content .dashboard-welcome { min-height: 0 !important; padding: 22px !important; }
+    .admin-page .admin-content .panel { padding: 16px !important; }
+}
+@media (max-width: 575px) {
+    .admin-page .admin-top { gap: 10px; padding: 13px 16px !important; align-items: flex-start; flex-direction: column; justify-content: center; }
+    .admin-page .admin-content { padding: 12px !important; }
+    .admin-page .admin-content .metric { min-height: 100px !important; padding: 14px !important; }
+}
+
+/* =========================================================
+   MODERN CLINIC — NEW THEME: MIDNIGHT EMERALD
+   Deep forest/navy surfaces, emerald accents, compact layouts.
+   Loaded last intentionally to replace the previous palette.
+========================================================= */
+:root{
+  --mc-bg:#071713;
+  --mc-surface:#0d211b;
+  --mc-surface-2:#112a22;
+  --mc-border:rgba(116,205,162,.16);
+  --mc-text:#eaf5ef;
+  --mc-muted:#a3bbb0;
+  --mc-green:#42d392;
+  --mc-green-dark:#20ad78;
+  --mc-cyan:#6ce7d0;
+  --mc-shadow:0 16px 38px rgba(0,0,0,.22);
+}
+html{scroll-behavior:smooth}
+body:not(.admin-page){
+  background:radial-gradient(ellipse at 12% 0%,rgba(34,150,105,.12),transparent 32%),
+             radial-gradient(ellipse at 90% 18%,rgba(49,178,162,.08),transparent 28%),
+             #071713 !important;
+  color:var(--mc-text) !important;
+}
+body:not(.admin-page) main{background:transparent!important;color:var(--mc-text)!important}
+body:not(.admin-page) .clinic-nav,
+body:not(.admin-page) nav.clinic-nav{
+  background:rgba(5,20,15,.96)!important;
+  border-bottom:1px solid rgba(90,221,160,.19)!important;
+  box-shadow:0 10px 32px rgba(0,0,0,.24)!important;
+  backdrop-filter:blur(18px)!important;
+}
+.clinic-nav .navbar-brand,.clinic-nav .navbar-brand span:not(.brand-mark),
+.clinic-nav .nav-link{color:#e8f5ee!important}
+.clinic-nav .navbar-brand span:last-child{color:var(--mc-green)!important}
+.clinic-nav .nav-link{font-weight:600!important;opacity:.82;transition:.2s ease}
+.clinic-nav .nav-link:hover,.clinic-nav .nav-link.active{color:var(--mc-green)!important;opacity:1}
+.clinic-nav .navbar-toggler{border:1px solid var(--mc-border)!important;color:var(--mc-green)!important}
+.brand-mark{background:linear-gradient(135deg,#42d392,#21a88a)!important;color:#062016!important;box-shadow:0 7px 22px rgba(66,211,146,.2)!important}
+body:not(.admin-page) .section,
+body:not(.admin-page) .section.bg-white,
+body:not(.admin-page) section.bg-white,
+body:not(.admin-page) .bg-light{
+  background:transparent!important;color:var(--mc-text)!important;
+}
+body:not(.admin-page) h1,body:not(.admin-page) h2,body:not(.admin-page) h3,
+body:not(.admin-page) h4,body:not(.admin-page) h5,body:not(.admin-page) h6,
+body:not(.admin-page) .section-title,body:not(.admin-page) .card-title{color:#f0faf4!important}
+body:not(.admin-page) p,body:not(.admin-page) .text-muted,
+body:not(.admin-page) .lead,body:not(.admin-page) .card-text{color:#a9c0b5!important}
+body:not(.admin-page) .hero,
+body:not(.admin-page) .home-hero,
+body:not(.admin-page) .appointment-hero,
+body:not(.admin-page) .doctors-hero-panel,
+body:not(.admin-page) .departments-hero-panel,
+body:not(.admin-page) .services-hero-panel,
+body:not(.admin-page) .about-hero-content,
+body:not(.admin-page) .doctor-profile-hero,
+body:not(.admin-page) .department-detail-hero{
+  background:linear-gradient(120deg,rgba(6,28,20,.97),rgba(11,54,39,.91) 62%,rgba(10,44,43,.88))!important;
+  color:#f1fff7!important;border:1px solid rgba(87,213,154,.2)!important;
+  border-radius:22px!important;box-shadow:var(--mc-shadow)!important;
+}
+body:not(.admin-page) .hero h1,body:not(.admin-page) .hero h2,
+body:not(.admin-page) .appointment-hero h1,body:not(.admin-page) .about-hero h1{color:#f5fff9!important}
+body:not(.admin-page) .hero p,body:not(.admin-page) .hero .lead{color:#c0d8cc!important}
+body:not(.admin-page) .card,body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .doctor-directory-card,body:not(.admin-page) .doctor-combined-card,
+body:not(.admin-page) .department-modern-card,body:not(.admin-page) .dept-card,
+body:not(.admin-page) .department-service-card,body:not(.admin-page) .service-card,
+body:not(.admin-page) .about-info-card,body:not(.admin-page) .about-value-card,
+body:not(.admin-page) .contact-card,body:not(.admin-page) .auth-card,
+body:not(.admin-page) .appointment-form,body:not(.admin-page) .appointment-help,
+body:not(.admin-page) .appointment-secure,body:not(.admin-page) .clinic-login-form-panel,
+body:not(.admin-page) .clinic-register-form-panel,body:not(.admin-page) .patient-profile-card{
+  background:linear-gradient(145deg,#10271f,#0b1e18)!important;
+  color:var(--mc-text)!important;border:1px solid var(--mc-border)!important;
+  border-radius:18px!important;box-shadow:0 12px 30px rgba(0,0,0,.16)!important;
+}
+body:not(.admin-page) .card-body{background:transparent!important;color:var(--mc-text)!important}
+body:not(.admin-page) .doctor-card:hover,body:not(.admin-page) .department-modern-card:hover,
+body:not(.admin-page) .dept-card:hover,body:not(.admin-page) .card:hover{
+  border-color:rgba(66,211,146,.42)!important;transform:translateY(-3px);transition:transform .22s ease,border-color .22s ease;
+}
+body:not(.admin-page) .btn-primary,body:not(.admin-page) .btn-success,
+body:not(.admin-page) .appointment-submit,body:not(.admin-page) .department-primary-btn,
+body:not(.admin-page) .department-cta-btn,body:not(.admin-page) .about-btn-primary{
+  background:linear-gradient(135deg,#42d392,#20ad78)!important;border:0!important;
+  color:#062016!important;font-weight:800!important;border-radius:11px!important;
+  box-shadow:0 8px 20px rgba(32,173,120,.18)!important;
+}
+body:not(.admin-page) .btn-outline-primary,body:not(.admin-page) .btn-outline-secondary,
+body:not(.admin-page) .department-secondary-btn,body:not(.admin-page) .about-btn-doctors{
+  color:#8cebc0!important;border-color:rgba(90,221,160,.4)!important;background:rgba(55,173,119,.06)!important;border-radius:11px!important;
+}
+body:not(.admin-page) a:not(.btn):not(.navbar-brand){color:#79e3b0}
+body:not(.admin-page) .form-control,body:not(.admin-page) .form-select,
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]),
+body:not(.admin-page) textarea,body:not(.admin-page) select{
+  background:#081a14!important;color:#eaf8f0!important;border:1px solid rgba(133,190,160,.25)!important;
+  border-radius:10px!important;box-shadow:none!important;
+}
+body:not(.admin-page) .form-control::placeholder,body:not(.admin-page) input::placeholder,
+body:not(.admin-page) textarea::placeholder{color:#78998a!important}
+body:not(.admin-page) .form-control:focus,body:not(.admin-page) .form-select:focus,
+body:not(.admin-page) input:focus,body:not(.admin-page) textarea:focus,body:not(.admin-page) select:focus{
+  border-color:#42d392!important;box-shadow:0 0 0 3px rgba(66,211,146,.12)!important;
+}
+body:not(.admin-page) label,body:not(.admin-page) .form-label{color:#d5e9de!important}
+body:not(.admin-page) .table{--bs-table-bg:transparent;--bs-table-color:#dcece3;--bs-table-border-color:rgba(116,205,162,.14)}
+body:not(.admin-page) .table thead th{background:#102a20!important;color:#8cebc0!important}
+body:not(.admin-page) .table td{color:#d5e8dd!important;background:rgba(10,31,23,.55)!important}
+body:not(.admin-page) .breadcrumb,body:not(.admin-page) .department-breadcrumb{display:none!important}
+body:not(.admin-page) .clinic-footer,body:not(.admin-page) footer,.footer{
+  background:#04110c!important;color:#a8c3b4!important;border-top:1px solid rgba(66,211,146,.18)!important;
+}
+body:not(.admin-page) footer h1,body:not(.admin-page) footer h2,body:not(.admin-page) footer h3,
+body:not(.admin-page) footer h4,body:not(.admin-page) footer h5,body:not(.admin-page) footer h6{color:#f0faf4!important}
+/* Login and registration get a deliberately immersive matching background. */
+.clinic-login-page,.clinic-register-page{background:radial-gradient(ellipse at 20% 10%,rgba(39,165,111,.18),transparent 36%),#071713!important;color:#eaf5ef!important}
+.clinic-login-layout,.clinic-register-layout{background:transparent!important}
+.clinic-login-form-panel,.clinic-register-form-panel{background:#0e241b!important;border:1px solid var(--mc-border)!important}
+/* Admin panel: same emerald identity, with a compact, legible work area. */
+body.admin-page{background:#071713!important;color:#eaf5ef!important}
+.admin-page .sidebar{background:linear-gradient(180deg,#04130d,#0b241a)!important;border-right:1px solid rgba(66,211,146,.18)!important;box-shadow:8px 0 28px rgba(0,0,0,.18)!important}
+.admin-page .sidebar a{color:#a9c7b7!important;border-radius:10px!important;margin:3px 9px!important;padding:10px 12px!important}
+.admin-page .sidebar a:hover,.admin-page .sidebar a.active{background:rgba(66,211,146,.13)!important;color:#78e5b0!important}
+.admin-page .admin-main{background:radial-gradient(ellipse at 80% 0%,rgba(37,144,99,.1),transparent 35%),#071713!important}
+.admin-page .admin-top{background:rgba(8,29,20,.96)!important;color:#eaf5ef!important;border-bottom:1px solid rgba(66,211,146,.16)!important;box-shadow:0 8px 24px rgba(0,0,0,.15)!important}
+.admin-page .admin-top h1,.admin-page .admin-top h2,.admin-page .admin-top h3,
+.admin-page .admin-top .h4,.admin-page .admin-top .text-dark{color:#f0faf4!important}
+.admin-page .admin-content{background:transparent!important;color:#eaf5ef!important;padding:22px!important}
+.admin-page .admin-content h1,.admin-page .admin-content h2,.admin-page .admin-content h3,
+.admin-page .admin-content h4,.admin-page .admin-content h5,.admin-page .admin-content h6,
+.admin-page .dashboard-section-heading,.admin-page .dashboard-welcome h1,
+.admin-page .dashboard-welcome h2{color:#effbf4!important}
+.admin-page .admin-content p,.admin-page .admin-content .text-muted{color:#a8c2b4!important}
+.admin-page .panel,.admin-page .dashboard-panel,.admin-page .metric,
+.admin-page .dashboard-welcome,.admin-page .appointments-panel,
+.admin-page .appointments-stat-card,.admin-page .card,.admin-page .table-responsive,
+.admin-page form,.admin-page .content-card{
+  background:linear-gradient(145deg,#10271f,#0b1d17)!important;color:#eaf5ef!important;
+  border:1px solid rgba(116,205,162,.15)!important;border-radius:15px!important;
+  box-shadow:0 10px 26px rgba(0,0,0,.15)!important;
+}
+.admin-page .dashboard-welcome{padding:22px!important;min-height:unset!important}
+.admin-page .admin-content .panel,.admin-page .admin-content .dashboard-panel{padding:18px!important}
+.admin-page .metric,.admin-page .appointments-stat-card{padding:16px!important;min-height:unset!important}
+.admin-page .metric h1,.admin-page .metric h2,.admin-page .metric h3,
+.admin-page .metric .number,.admin-page .appointments-stat-number{color:#72e5ad!important}
+.admin-page .form-control,.admin-page .form-select,.admin-page input:not([type=checkbox]):not([type=radio]),
+.admin-page textarea,.admin-page select{background:#081a14!important;color:#eaf8f0!important;border:1px solid rgba(133,190,160,.25)!important;border-radius:9px!important}
+.admin-page label,.admin-page .form-label{color:#cfe3d7!important}
+.admin-page .table{--bs-table-bg:transparent;--bs-table-color:#dcece3;--bs-table-border-color:rgba(116,205,162,.13)}
+.admin-page .table thead th{background:#143125!important;color:#86e7b5!important}
+.admin-page .table td{background:rgba(8,27,19,.6)!important;color:#d7e9de!important}
+.admin-page .btn-primary,.admin-page .btn-success{background:linear-gradient(135deg,#42d392,#20ad78)!important;border:0!important;color:#062016!important;font-weight:800!important}
+.admin-page .btn-outline-primary,.admin-page .btn-outline-secondary{color:#8cebc0!important;border-color:rgba(90,221,160,.35)!important}
+.admin-page .badge.bg-light,.admin-page .text-bg-light{background:#19372a!important;color:#c9f3dc!important}
+@media(max-width:767px){.admin-page .admin-content{padding:13px!important}.admin-page .admin-content .panel,.admin-page .admin-content .dashboard-panel{padding:14px!important}body:not(.admin-page) .section,body:not(.admin-page) .section.bg-white{padding-top:30px!important;padding-bottom:30px!important}}
+
+
+/* =========================================================
+   MODERN CLINIC — BLUE + GREEN + TEAL (LIGHT PREMIUM)
+   Overrides Midnight Emerald with a cleaner, brighter clinic
+   palette while preserving layout and existing functionality.
+========================================================= */
+:root {
+  --mc-bg: #f3f8fb;
+  --mc-surface: #ffffff;
+  --mc-surface-2: #f7fbfd;
+  --mc-border: #dce9ef;
+  --mc-text: #19354a;
+  --mc-muted: #647b8b;
+  --mc-blue: #1769aa;
+  --mc-blue-dark: #104c7d;
+  --mc-green: #2fa66b;
+  --mc-teal: #16a6a1;
+  --mc-shadow: 0 12px 30px rgba(22, 67, 95, .08);
+}
+body:not(.admin-page) {
+  background:
+    radial-gradient(ellipse at 5% 0%, rgba(22,166,161,.08), transparent 28%),
+    radial-gradient(ellipse at 95% 10%, rgba(47,166,107,.07), transparent 26%),
+    #f3f8fb !important;
+  color: #19354a !important;
+}
+body:not(.admin-page) main { background: transparent !important; color: #19354a !important; }
+body:not(.admin-page) .clinic-nav,
+body:not(.admin-page) nav.clinic-nav {
+  background: linear-gradient(105deg, #123d62 0%, #1769aa 62%, #168f94 100%) !important;
+  border-bottom: 1px solid rgba(255,255,255,.16) !important;
+  box-shadow: 0 8px 26px rgba(17,68,101,.17) !important;
+  backdrop-filter: blur(14px) !important;
+}
+.clinic-nav .navbar-brand,
+.clinic-nav .navbar-brand span:not(.brand-mark),
+.clinic-nav .nav-link { color: #fff !important; }
+.clinic-nav .navbar-brand span:last-child,
+.clinic-nav .nav-link:hover,
+.clinic-nav .nav-link.active { color: #b9f4dd !important; }
+.clinic-nav .nav-link { opacity: .91; font-weight: 600 !important; }
+.clinic-nav .navbar-toggler { border: 1px solid rgba(255,255,255,.42) !important; color: #fff !important; }
+.brand-mark {
+  background: linear-gradient(135deg, #53d69a, #35c5c1) !important;
+  color: #103c4b !important;
+  box-shadow: 0 6px 18px rgba(53,197,193,.24) !important;
+}
+body:not(.admin-page) .section,
+body:not(.admin-page) .section.bg-white,
+body:not(.admin-page) section.bg-white,
+body:not(.admin-page) .bg-light {
+  background: transparent !important;
+  color: #19354a !important;
+}
+body:not(.admin-page) h1, body:not(.admin-page) h2,
+body:not(.admin-page) h3, body:not(.admin-page) h4,
+body:not(.admin-page) h5, body:not(.admin-page) h6,
+body:not(.admin-page) .section-title, body:not(.admin-page) .card-title {
+  color: #173c58 !important;
+}
+body:not(.admin-page) p, body:not(.admin-page) .text-muted,
+body:not(.admin-page) .lead, body:not(.admin-page) .card-text {
+  color: #647b8b !important;
+}
+body:not(.admin-page) .hero,
+body:not(.admin-page) .home-hero,
+body:not(.admin-page) .appointment-hero,
+body:not(.admin-page) .doctors-hero-panel,
+body:not(.admin-page) .departments-hero-panel,
+body:not(.admin-page) .services-hero-panel,
+body:not(.admin-page) .about-hero-content,
+body:not(.admin-page) .doctor-profile-hero,
+body:not(.admin-page) .department-detail-hero {
+  background: linear-gradient(115deg, rgba(15,57,91,.97), rgba(23,105,170,.94) 62%, rgba(22,143,148,.92)) !important;
+  color: #fff !important;
+  border: 1px solid rgba(255,255,255,.2) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 14px 32px rgba(21,82,120,.15) !important;
+}
+body:not(.admin-page) .hero h1, body:not(.admin-page) .hero h2,
+body:not(.admin-page) .appointment-hero h1, body:not(.admin-page) .about-hero h1 { color: #fff !important; }
+body:not(.admin-page) .hero p, body:not(.admin-page) .hero .lead { color: #e0f1f7 !important; }
+body:not(.admin-page) .card,
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .doctor-directory-card,
+body:not(.admin-page) .doctor-combined-card,
+body:not(.admin-page) .department-modern-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .department-service-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .about-info-card,
+body:not(.admin-page) .about-value-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .auth-card,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointment-help,
+body:not(.admin-page) .appointment-secure,
+body:not(.admin-page) .clinic-login-form-panel,
+body:not(.admin-page) .clinic-register-form-panel,
+body:not(.admin-page) .patient-profile-card {
+  background: #fff !important;
+  color: #19354a !important;
+  border: 1px solid #dce9ef !important;
+  border-radius: 16px !important;
+  box-shadow: 0 9px 26px rgba(22,67,95,.07) !important;
+}
+body:not(.admin-page) .card-body { background: transparent !important; color: #19354a !important; }
+body:not(.admin-page) .doctor-card:hover,
+body:not(.admin-page) .department-modern-card:hover,
+body:not(.admin-page) .dept-card:hover,
+body:not(.admin-page) .card:hover {
+  border-color: rgba(22,166,161,.55) !important;
+  transform: translateY(-3px);
+  transition: transform .22s ease, border-color .22s ease;
+}
+body:not(.admin-page) .btn-primary,
+body:not(.admin-page) .appointment-submit,
+body:not(.admin-page) .department-primary-btn,
+body:not(.admin-page) .department-cta-btn,
+body:not(.admin-page) .about-btn-primary {
+  background: linear-gradient(120deg, #1769aa, #168f94) !important;
+  border: 0 !important; color: #fff !important; font-weight: 700 !important;
+  border-radius: 10px !important; box-shadow: 0 7px 16px rgba(23,105,170,.17) !important;
+}
+body:not(.admin-page) .btn-success {
+  background: linear-gradient(120deg, #2fa66b, #20a99c) !important;
+  border: 0 !important; color: #fff !important; border-radius: 10px !important;
+}
+body:not(.admin-page) .btn-outline-primary,
+body:not(.admin-page) .btn-outline-secondary,
+body:not(.admin-page) .department-secondary-btn,
+body:not(.admin-page) .about-btn-doctors {
+  color: #1769aa !important; border-color: #9ec7dc !important; background: #f4fafc !important;
+  border-radius: 10px !important;
+}
+body:not(.admin-page) a:not(.btn):not(.navbar-brand) { color: #167f87; }
+body:not(.admin-page) .form-control,
+body:not(.admin-page) .form-select,
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]),
+body:not(.admin-page) textarea,
+body:not(.admin-page) select {
+  background: #fff !important; color: #19354a !important;
+  border: 1px solid #cbdde7 !important; border-radius: 9px !important; box-shadow: none !important;
+}
+body:not(.admin-page) .form-control::placeholder,
+body:not(.admin-page) input::placeholder,
+body:not(.admin-page) textarea::placeholder { color: #879aa7 !important; }
+body:not(.admin-page) .form-control:focus,
+body:not(.admin-page) .form-select:focus,
+body:not(.admin-page) input:focus,
+body:not(.admin-page) textarea:focus,
+body:not(.admin-page) select:focus {
+  border-color: #16a6a1 !important; box-shadow: 0 0 0 3px rgba(22,166,161,.12) !important;
+}
+body:not(.admin-page) label, body:not(.admin-page) .form-label { color: #31546a !important; }
+body:not(.admin-page) .table {
+  --bs-table-bg: #fff; --bs-table-color: #19354a; --bs-table-border-color: #e1ebf0;
+}
+body:not(.admin-page) .table thead th { background: #eaf5f8 !important; color: #1769aa !important; }
+body:not(.admin-page) .table td { color: #35566a !important; background: #fff !important; }
+body:not(.admin-page) .breadcrumb, body:not(.admin-page) .department-breadcrumb { display: none !important; }
+body:not(.admin-page) .clinic-footer, body:not(.admin-page) footer, .footer {
+  background: linear-gradient(110deg, #123d62, #1769aa 65%, #168f94) !important;
+  color: #dcecf3 !important; border-top: 0 !important;
+}
+body:not(.admin-page) footer h1, body:not(.admin-page) footer h2,
+body:not(.admin-page) footer h3, body:not(.admin-page) footer h4,
+body:not(.admin-page) footer h5, body:not(.admin-page) footer h6 { color: #fff !important; }
+body:not(.admin-page) footer p, body:not(.admin-page) footer a { color: #dcecf3 !important; }
+.clinic-login-page, .clinic-register-page {
+  background: linear-gradient(135deg, #eaf5f8, #f4fafb 55%, #eaf8f1) !important;
+  color: #19354a !important;
+}
+.clinic-login-layout, .clinic-register-layout { background: transparent !important; }
+.clinic-login-form-panel, .clinic-register-form-panel { background: #fff !important; border: 1px solid #dce9ef !important; }
+
+/* Admin pages: pale canvas, white cards, blue navigation and green/teal status accents. */
+body.admin-page { background: #f2f7fa !important; color: #19354a !important; }
+.admin-page .sidebar {
+  background: linear-gradient(180deg, #123d62, #155b83 68%, #147f80) !important;
+  border-right: 0 !important; box-shadow: 5px 0 22px rgba(20,70,100,.1) !important;
+}
+.admin-page .sidebar a {
+  color: #d4e8f2 !important; border-radius: 9px !important;
+  margin: 3px 9px !important; padding: 10px 12px !important;
+}
+.admin-page .sidebar a:hover, .admin-page .sidebar a.active {
+  background: rgba(90,222,185,.17) !important; color: #baf5dd !important;
+}
+.admin-page .admin-main {
+  background: radial-gradient(ellipse at 90% 0%, rgba(22,166,161,.06), transparent 32%), #f2f7fa !important;
+}
+.admin-page .admin-top {
+  background: #fff !important; color: #19354a !important;
+  border-bottom: 1px solid #dce8ee !important; box-shadow: 0 4px 16px rgba(22,67,95,.04) !important;
+}
+.admin-page .admin-top h1, .admin-page .admin-top h2,
+.admin-page .admin-top h3, .admin-page .admin-top .h4,
+.admin-page .admin-top .text-dark { color: #173c58 !important; }
+.admin-page .admin-content { background: transparent !important; color: #19354a !important; padding: 22px !important; }
+.admin-page .admin-content h1, .admin-page .admin-content h2,
+.admin-page .admin-content h3, .admin-page .admin-content h4,
+.admin-page .admin-content h5, .admin-page .admin-content h6,
+.admin-page .dashboard-section-heading, .admin-page .dashboard-welcome h1,
+.admin-page .dashboard-welcome h2 { color: #173c58 !important; }
+.admin-page .admin-content p, .admin-page .admin-content .text-muted { color: #647b8b !important; }
+.admin-page .panel, .admin-page .dashboard-panel, .admin-page .metric,
+.admin-page .dashboard-welcome, .admin-page .appointments-panel,
+.admin-page .appointments-stat-card, .admin-page .card,
+.admin-page .table-responsive, .admin-page form, .admin-page .content-card {
+  background: #fff !important; color: #19354a !important;
+  border: 1px solid #dce8ee !important; border-radius: 14px !important;
+  box-shadow: 0 8px 22px rgba(22,67,95,.055) !important;
+}
+.admin-page .dashboard-welcome { padding: 22px !important; min-height: unset !important; }
+.admin-page .admin-content .panel, .admin-page .admin-content .dashboard-panel { padding: 18px !important; }
+.admin-page .metric, .admin-page .appointments-stat-card { padding: 16px !important; min-height: unset !important; }
+.admin-page .metric h1, .admin-page .metric h2, .admin-page .metric h3,
+.admin-page .metric .number, .admin-page .appointments-stat-number { color: #168f94 !important; }
+.admin-page .form-control, .admin-page .form-select,
+.admin-page input:not([type=checkbox]):not([type=radio]), .admin-page textarea, .admin-page select {
+  background: #fff !important; color: #19354a !important; border: 1px solid #cbdde7 !important; border-radius: 9px !important;
+}
+.admin-page label, .admin-page .form-label { color: #31546a !important; }
+.admin-page .table { --bs-table-bg: #fff; --bs-table-color: #19354a; --bs-table-border-color: #e1ebf0; }
+.admin-page .table thead th { background: #eaf5f8 !important; color: #1769aa !important; }
+.admin-page .table td { background: #fff !important; color: #35566a !important; }
+.admin-page .btn-primary { background: linear-gradient(120deg, #1769aa, #168f94) !important; border: 0 !important; color: #fff !important; }
+.admin-page .btn-success { background: linear-gradient(120deg, #2fa66b, #20a99c) !important; border: 0 !important; color: #fff !important; }
+.admin-page .btn-outline-primary, .admin-page .btn-outline-secondary { color: #1769aa !important; border-color: #9ec7dc !important; }
+.admin-page .badge.bg-light, .admin-page .text-bg-light { background: #e5f5ed !important; color: #267a56 !important; }
+@media (max-width: 767px) {
+  .admin-page .admin-content { padding: 13px !important; }
+  .admin-page .admin-content .panel, .admin-page .admin-content .dashboard-panel { padding: 14px !important; }
+  body:not(.admin-page) .section, body:not(.admin-page) .section.bg-white { padding-top: 30px !important; padding-bottom: 30px !important; }
+}
+
+
+/* =========================================================
+   FINAL POLISH — compact components, unified buttons, blue/green backdrop
+========================================================= */
+:root {
+  --clinic-blue: #1769aa;
+  --clinic-blue-deep: #124b78;
+  --clinic-green: #2fa66b;
+  --clinic-teal: #16a6a1;
+  --clinic-ink: #19354a;
+  --clinic-muted: #647b8b;
+  --clinic-line: #d9e8ef;
+}
+body:not(.admin-page) {
+  background-color: #f2f8fb !important;
+  background-image:
+    radial-gradient(ellipse 440px 300px at 0% 8%, rgba(23,105,170,.13), transparent 72%),
+    radial-gradient(ellipse 520px 340px at 100% 28%, rgba(22,166,161,.12), transparent 70%),
+    radial-gradient(ellipse 420px 300px at 15% 82%, rgba(47,166,107,.09), transparent 72%),
+    linear-gradient(140deg, #f7fbfd 0%, #edf7fa 50%, #f4faf6 100%) !important;
+  background-attachment: fixed !important;
+}
+body:not(.admin-page) main { background: transparent !important; }
+body:not(.admin-page) .container { max-width: 1160px; }
+body:not(.admin-page) .section { padding-top: 48px !important; padding-bottom: 48px !important; }
+body:not(.admin-page) .card,
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .doctor-directory-card,
+body:not(.admin-page) .doctor-combined-card,
+body:not(.admin-page) .department-modern-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .department-service-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .about-info-card,
+body:not(.admin-page) .about-value-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .auth-card,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointment-help,
+body:not(.admin-page) .appointment-secure,
+body:not(.admin-page) .clinic-login-form-panel,
+body:not(.admin-page) .clinic-register-form-panel,
+body:not(.admin-page) .patient-profile-card,
+body:not(.admin-page) .ep-card {
+  border-radius: 14px !important;
+  box-shadow: 0 7px 22px rgba(20,70,100,.055) !important;
+}
+body:not(.admin-page) .card-body { padding: 17px !important; }
+body:not(.admin-page) .btn,
+body:not(.admin-page) button,
+body:not(.admin-page) input[type="submit"] {
+  min-height: 38px;
+  padding: 9px 15px !important;
+  border-radius: 9px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease !important;
+}
+body:not(.admin-page) .btn-primary,
+body:not(.admin-page) .appointment-submit,
+body:not(.admin-page) .department-primary-btn,
+body:not(.admin-page) .department-cta-btn,
+body:not(.admin-page) .about-btn-primary,
+body:not(.admin-page) .patient-edit-top,
+body:not(.admin-page) .patient-profile-button,
+body:not(.admin-page) .ep-btn-save {
+  background: linear-gradient(115deg, #1769aa 0%, #168f94 100%) !important;
+  border: 1px solid transparent !important;
+  color: #fff !important;
+  box-shadow: 0 5px 13px rgba(23,105,170,.16) !important;
+}
+body:not(.admin-page) .btn-success { background: linear-gradient(115deg,#2fa66b,#16a6a1) !important; color:#fff !important; border:0 !important; }
+body:not(.admin-page) .btn:hover,
+body:not(.admin-page) button:hover,
+body:not(.admin-page) input[type="submit"]:hover { transform: translateY(-1px); }
+body:not(.admin-page) .btn-outline-primary,
+body:not(.admin-page) .btn-outline-secondary,
+body:not(.admin-page) .department-secondary-btn,
+body:not(.admin-page) .about-btn-doctors,
+body:not(.admin-page) .ep-btn-cancel {
+  background: #fff !important; color: #1769aa !important; border: 1px solid #bfd8e5 !important;
+}
+body:not(.admin-page) .form-control,
+body:not(.admin-page) .form-select,
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]):not([type=file]),
+body:not(.admin-page) textarea,
+body:not(.admin-page) select {
+  min-height: 40px !important; padding: 9px 11px !important; border-radius: 8px !important;
+  font-size: 13px !important; border-color: #cfdee7 !important; background: #fff !important;
+}
+body:not(.admin-page) textarea { min-height: 82px !important; }
+body:not(.admin-page) input[type=file] { font-size: 12px !important; }
+body:not(.admin-page) .patient-profile-page,
+body:not(.admin-page) .edit-profile-page {
+  background: transparent !important;
+  padding-top: 26px !important;
+  padding-bottom: 42px !important;
+}
+.patient-profile-shell { max-width: 900px !important; }
+.patient-profile-intro { margin-bottom: 17px !important; }
+.patient-profile-intro h1 { font-size: clamp(26px, 3vw, 32px) !important; }
+.patient-profile-banner { padding: 20px 22px !important; border-radius: 17px !important; gap: 16px !important; }
+.patient-avatar { width: 76px !important; height: 76px !important; flex: 0 0 76px !important; }
+.patient-profile-identity h2 { font-size: 20px !important; }
+.patient-edit-top { min-height: 38px !important; padding: 9px 13px !important; font-size: 12px !important; }
+.patient-stat-grid { gap: 12px !important; margin: 15px 0 !important; }
+.patient-stat-card { padding: 14px !important; min-height: 82px !important; border-radius: 13px !important; }
+.patient-stat-number { font-size: 23px !important; }
+.patient-profile-card { padding: 17px !important; }
+.patient-profile-card-heading { margin-bottom: 13px !important; }
+.patient-profile-card-heading h2 { font-size: 17px !important; }
+.patient-appointment-table th, .patient-appointment-table td { padding: 11px 10px !important; font-size: 12px !important; }
+.ep-wrap { max-width: 740px !important; }
+.ep-heading { margin-bottom: 15px !important; }
+.ep-heading h1 { font-size: clamp(25px, 3vw, 32px) !important; }
+.ep-card { overflow: hidden; }
+.ep-banner { padding: 17px 21px !important; gap: 13px !important; }
+.ep-avatar { width: 60px !important; height: 60px !important; flex: 0 0 60px !important; }
+.ep-form { padding: 19px 21px !important; }
+.ep-grid { gap: 14px 17px !important; }
+.ep-section-title { margin-bottom: 13px !important; padding-bottom: 9px !important; }
+.ep-field label { margin-bottom: 5px !important; font-size: 12px !important; }
+.ep-field input, .ep-field select { min-height: 39px !important; padding: 8px 10px !important; }
+.ep-field textarea { min-height: 76px !important; }
+.ep-actions { margin-top: 18px !important; padding-top: 15px !important; }
+.ep-btn { min-height: 39px !important; padding: 8px 15px !important; font-size: 12px !important; }
+.ep-btn-save { background: linear-gradient(115deg,#1769aa,#168f94) !important; box-shadow: 0 5px 13px rgba(23,105,170,.17) !important; }
+.ep-btn-cancel { background: #fff !important; color: #1769aa !important; border: 1px solid #bfd8e5 !important; }
+.admin-page .admin-content { padding: 18px !important; }
+.admin-page .admin-content .panel, .admin-page .admin-content .dashboard-panel,
+.admin-page .admin-content .card, .admin-page .admin-content .content-card { padding: 15px !important; border-radius: 13px !important; }
+.admin-page .btn, .admin-page button, .admin-page input[type=submit] { min-height: 36px !important; padding: 8px 12px !important; font-size: 12px !important; border-radius: 8px !important; }
+.admin-page .form-control, .admin-page .form-select,
+.admin-page input:not([type=checkbox]):not([type=radio]), .admin-page textarea, .admin-page select {
+  min-height: 38px !important; padding: 8px 10px !important; font-size: 12px !important;
+}
+@media (max-width: 700px) {
+  .patient-profile-banner { align-items: flex-start !important; flex-wrap: wrap !important; padding: 17px !important; }
+  .patient-edit-top { margin-left: 0 !important; }
+  .patient-stat-grid { grid-template-columns: 1fr !important; }
+  .patient-profile-card { padding: 13px !important; }
+  .ep-form { padding: 16px !important; }
+  .ep-banner { padding: 15px !important; }
+  .admin-page .admin-content { padding: 12px !important; }
+}
+
+/* =========================================================
+   MODERN CLINIC — OCEAN GLASS THEME
+   Final visual pass: full-bleed hero, transparent navbar,
+   blue/teal/green accents, compact cards and polished controls.
+========================================================= */
+:root {
+  --clinic-blue: #1769aa;
+  --clinic-blue-deep: #123b60;
+  --clinic-teal: #169eaa;
+  --clinic-green: #35ad78;
+  --clinic-ink: #18374e;
+  --clinic-muted: #657f90;
+  --clinic-line: #dce9ef;
+  --clinic-paper: #ffffff;
+  --clinic-canvas: #f3f8fb;
+}
+
+html { scroll-behavior: smooth; }
+body:not(.admin-page) {
+  position: relative;
+  isolation: isolate;
+  overflow-x: clip;
+  background: var(--clinic-canvas) !important;
+  color: var(--clinic-ink) !important;
+}
+/* Decorative soft color shapes behind page content, not white corner gaps. */
+body:not(.admin-page)::before,
+body:not(.admin-page)::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  width: 380px;
+  height: 380px;
+  border-radius: 42% 58% 61% 39% / 44% 38% 62% 56%;
+  filter: blur(2px);
+  opacity: .42;
+}
+body:not(.admin-page)::before {
+  top: 16%; left: -245px;
+  background: radial-gradient(circle at 65% 35%, rgba(42,164,219,.28), rgba(42,164,219,0) 68%);
+  transform: rotate(24deg);
+}
+body:not(.admin-page)::after {
+  top: 48%; right: -255px;
+  background: radial-gradient(circle at 40% 45%, rgba(47,184,133,.22), rgba(47,184,133,0) 70%);
+  transform: rotate(-25deg);
+}
+body:not(.admin-page) main { position: relative; background: transparent !important; }
+body:not(.admin-page) main > section:not(.hero) { position: relative; background: transparent !important; }
+
+/* Transparent glass navbar, full width with no white strip at its edges. */
+body:not(.admin-page) .clinic-nav,
+body:not(.admin-page) nav.clinic-nav {
+  min-height: 72px !important;
+  padding: 9px 0 !important;
+  background: rgba(12, 49, 78, .48) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,.19) !important;
+  box-shadow: 0 8px 30px rgba(12,49,78,.10) !important;
+  backdrop-filter: blur(18px) saturate(145%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(145%) !important;
+}
+.clinic-nav > .container { max-width: 1160px !important; }
+.clinic-nav .navbar-brand { color: #fff !important; font-size: 1.2rem !important; letter-spacing: -.035em; }
+.clinic-nav .navbar-brand span:last-child { color: #a7f1d1 !important; }
+.clinic-nav .brand-mark {
+  width: 34px !important; height: 34px !important; display: inline-grid !important;
+  place-items: center !important; border-radius: 11px !important;
+  background: linear-gradient(135deg, #66dba6, #48c9d0) !important;
+  color: #103d58 !important; margin-right: 7px !important;
+}
+.clinic-nav .navbar-nav { gap: 4px !important; }
+.clinic-nav .nav-link {
+  position: relative !important; display: inline-flex !important; align-items: center !important;
+  min-height: 39px !important; padding: 9px 13px !important; margin: 0 1px !important;
+  border-radius: 10px !important; color: rgba(255,255,255,.9) !important;
+  font-size: .88rem !important; font-weight: 650 !important; opacity: 1 !important;
+  background: transparent !important;
+  transition: color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease !important;
+}
+.clinic-nav .nav-link::after {
+  content: ""; position: absolute; left: 13px; right: 13px; bottom: 5px;
+  height: 2px; border-radius: 2px; background: #8ce9c0;
+  transform: scaleX(0); transform-origin: center; transition: transform .2s ease;
+}
+.clinic-nav .nav-link:hover,
+.clinic-nav .nav-link:focus-visible,
+.clinic-nav .nav-link.active {
+  color: #bdf7df !important; background: rgba(255,255,255,.13) !important;
+  transform: translateY(-1px); box-shadow: inset 0 0 0 1px rgba(255,255,255,.07) !important;
+}
+.clinic-nav .nav-link:hover::after,
+.clinic-nav .nav-link:focus-visible::after,
+.clinic-nav .nav-link.active::after { transform: scaleX(1); }
+.clinic-nav .btn,
+.clinic-nav a.btn {
+  min-height: 39px !important; display: inline-flex !important; align-items: center !important;
+  justify-content: center !important; padding: 9px 16px !important; margin-left: 3px !important;
+  color: #123b60 !important; background: linear-gradient(120deg,#b9f5d7,#8be0d8) !important;
+  border: 1px solid rgba(255,255,255,.3) !important; border-radius: 10px !important;
+  box-shadow: 0 5px 16px rgba(0,0,0,.10) !important; font-size: .88rem !important; font-weight: 800 !important;
+  transition: transform .2s ease, filter .2s ease, box-shadow .2s ease !important;
+}
+.clinic-nav .btn:hover { transform: translateY(-2px) !important; filter: saturate(1.1) brightness(1.03); box-shadow: 0 9px 20px rgba(0,0,0,.15) !important; }
+.clinic-nav .navbar-toggler { border-color: rgba(255,255,255,.42) !important; color: #fff !important; box-shadow: none !important; }
+
+/* Home hero: full bleed, aligned beneath transparent navbar, no white corner seams. */
+body:not(.admin-page) .hero {
+  width: 100% !important; max-width: none !important; margin: 0 !important;
+  min-height: 0 !important; padding: 132px 0 58px !important;
+  border: 0 !important; border-radius: 0 !important;
+  background:
+    linear-gradient(108deg, rgba(10,43,72,.95) 0%, rgba(16,80,119,.88) 52%, rgba(17,126,127,.72) 100%),
+    url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1900&q=85") center 42%/cover no-repeat !important;
+  box-shadow: none !important;
+}
+body:not(.admin-page) .hero > .container { max-width: 1120px !important; }
+body:not(.admin-page) .hero .row { --bs-gutter-x: 2rem; --bs-gutter-y: 1.5rem; }
+body:not(.admin-page) .hero h1 { max-width: 600px !important; font-size: clamp(2.25rem,4.1vw,3.65rem) !important; line-height: 1.1 !important; letter-spacing: -.045em !important; }
+body:not(.admin-page) .hero p { max-width: 530px; font-size: 1rem !important; line-height: 1.75 !important; color: #e1f0f7 !important; }
+body:not(.admin-page) .hero-art {
+  min-height: 300px !important; height: clamp(300px,32vw,370px) !important;
+  max-width: 475px !important; margin-left: auto !important; border-radius: 23px !important;
+  border: 1px solid rgba(255,255,255,.28) !important;
+  box-shadow: 0 22px 55px rgba(5,32,56,.22) !important;
+}
+body:not(.admin-page) .hero .floating-card {
+  max-width: 310px !important; padding: 15px 17px !important; border-radius: 14px !important;
+  background: rgba(255,255,255,.94) !important; color: #18374e !important;
+  border: 1px solid rgba(255,255,255,.7) !important; box-shadow: 0 15px 32px rgba(7,39,62,.18) !important;
+}
+body:not(.admin-page) .hero .floating-card strong { color: #174b6e !important; }
+body:not(.admin-page) .section { padding: 43px 0 !important; }
+body:not(.admin-page) .section > .container,
+body:not(.admin-page) main > section:not(.hero) > .container { max-width: 1100px !important; }
+body:not(.admin-page) .section-title { font-size: clamp(1.55rem,2.5vw,2.05rem) !important; color: #173e5a !important; }
+body:not(.admin-page) .section-kicker { color: #168c92 !important; }
+
+/* Compact and consistent cards; remove oversized padding and harsh shadows. */
+body:not(.admin-page) .card,
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .review-card,
+body:not(.admin-page) .info-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item,
+body:not(.admin-page) .stat-card,
+body:not(.admin-page) .panel,
+body:not(.admin-page) .auth-card,
+body:not(.admin-page) .patient-profile-card,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointment-help,
+body:not(.admin-page) .ep-card {
+  background: rgba(255,255,255,.91) !important; color: #18374e !important;
+  border: 1px solid rgba(205,224,234,.88) !important; border-radius: 15px !important;
+  box-shadow: 0 8px 24px rgba(24,73,103,.065) !important;
+}
+body:not(.admin-page) .card-body { padding: 17px !important; }
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .review-card,
+body:not(.admin-page) .info-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item { padding: 17px !important; }
+body:not(.admin-page) .stat-card { min-height: 86px !important; padding: 15px 17px !important; }
+body:not(.admin-page) .stat-number { font-size: clamp(1.55rem,2.5vw,2rem) !important; color: #168e98 !important; }
+body:not(.admin-page) .card-title,
+body:not(.admin-page) .doctor-card h5,
+body:not(.admin-page) .dept-card h5,
+body:not(.admin-page) .service-card h5 { color: #1a4664 !important; font-size: 1.02rem !important; }
+body:not(.admin-page) .card-text,
+body:not(.admin-page) .doctor-card p,
+body:not(.admin-page) .dept-card p,
+body:not(.admin-page) .service-card p { color: #657f90 !important; font-size: .91rem !important; line-height: 1.65 !important; }
+body:not(.admin-page) .doctor-card:hover,
+body:not(.admin-page) .dept-card:hover,
+body:not(.admin-page) .service-card:hover,
+body:not(.admin-page) .review-card:hover,
+body:not(.admin-page) .info-card:hover,
+body:not(.admin-page) .contact-card:hover,
+body:not(.admin-page) .faq-item:hover,
+body:not(.admin-page) .stat-card:hover {
+  transform: translateY(-3px) !important; border-color: rgba(22,158,170,.42) !important;
+  box-shadow: 0 14px 30px rgba(24,73,103,.10) !important;
+}
+
+/* Buttons: unified sizing, visible hierarchy, polished hover and focus. */
+body:not(.admin-page) .btn,
+body:not(.admin-page) button,
+body:not(.admin-page) .ep-btn {
+  font-weight: 700 !important; border-radius: 10px !important;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease, border-color .18s ease !important;
+}
+body:not(.admin-page) .btn:not(.btn-lg),
+body:not(.admin-page) .ep-btn { min-height: 39px !important; padding: 9px 15px !important; font-size: .9rem !important; }
+body:not(.admin-page) .btn-lg { min-height: 44px !important; padding: 11px 19px !important; font-size: .94rem !important; }
+body:not(.admin-page) .btn-primary,
+body:not(.admin-page) .appointment-submit,
+body:not(.admin-page) .ep-btn-save {
+  color: #fff !important; border: 1px solid transparent !important;
+  background: linear-gradient(115deg,#1769aa 0%,#168fa3 100%) !important;
+  box-shadow: 0 6px 15px rgba(23,105,170,.17) !important;
+}
+body:not(.admin-page) .btn-success { color: #fff !important; border: 1px solid transparent !important; background: linear-gradient(115deg,#2c9d67,#159e9a) !important; }
+body:not(.admin-page) .btn-outline-primary,
+body:not(.admin-page) .btn-outline-dark,
+body:not(.admin-page) .btn-outline-secondary,
+body:not(.admin-page) .ep-btn-cancel {
+  color: #1769aa !important; border: 1px solid #a9cbdc !important; background: rgba(255,255,255,.84) !important;
+}
+body:not(.admin-page) .btn-primary:hover,
+body:not(.admin-page) .btn-success:hover,
+body:not(.admin-page) .appointment-submit:hover,
+body:not(.admin-page) .ep-btn-save:hover {
+  transform: translateY(-2px) !important; filter: brightness(1.04) saturate(1.08);
+  box-shadow: 0 10px 22px rgba(23,105,170,.23) !important;
+}
+body:not(.admin-page) .btn-outline-primary:hover,
+body:not(.admin-page) .btn-outline-dark:hover,
+body:not(.admin-page) .btn-outline-secondary:hover,
+body:not(.admin-page) .ep-btn-cancel:hover {
+  color: #fff !important; background: #1769aa !important; border-color: #1769aa !important; transform: translateY(-1px) !important;
+}
+body:not(.admin-page) .btn:focus-visible,
+body:not(.admin-page) button:focus-visible,
+.clinic-nav a:focus-visible { outline: 3px solid rgba(53,173,120,.42) !important; outline-offset: 3px !important; }
+
+/* Readable, tidy form controls across login, appointment and profile pages. */
+body:not(.admin-page) .form-control,
+body:not(.admin-page) .form-select,
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]):not([type=file]),
+body:not(.admin-page) textarea,
+body:not(.admin-page) select {
+  min-height: 42px !important; padding: 10px 12px !important;
+  color: #18374e !important; background: #fff !important;
+  border: 1px solid #cddfe8 !important; border-radius: 9px !important; box-shadow: none !important;
+  font-size: .92rem !important;
+}
+body:not(.admin-page) textarea { min-height: 100px !important; }
+body:not(.admin-page) input[type=file] { min-height: 42px !important; padding: 8px !important; }
+body:not(.admin-page) label,
+body:not(.admin-page) .form-label,
+body:not(.admin-page) .ep-field label { color: #31546a !important; font-size: .88rem !important; font-weight: 700 !important; }
+body:not(.admin-page) .form-control:focus,
+body:not(.admin-page) .form-select:focus,
+body:not(.admin-page) input:focus,
+body:not(.admin-page) textarea:focus,
+body:not(.admin-page) select:focus {
+  border-color: #169eaa !important; box-shadow: 0 0 0 3px rgba(22,158,170,.12) !important;
+}
+body:not(.admin-page) h1, body:not(.admin-page) h2,
+body:not(.admin-page) h3, body:not(.admin-page) h4,
+body:not(.admin-page) h5, body:not(.admin-page) h6 { color: #183e59; }
+body:not(.admin-page) p, body:not(.admin-page) .text-muted { color: #657f90; }
+body:not(.admin-page) .breadcrumb { display: none !important; }
+body:not(.admin-page) footer,
+body:not(.admin-page) .footer,
+body:not(.admin-page) .clinic-footer {
+  background: linear-gradient(115deg,#123b60 0%,#1769aa 62%,#168f94 100%) !important;
+  color: #dcecf4 !important; border: 0 !important;
+}
+body:not(.admin-page) footer h1, body:not(.admin-page) footer h2,
+body:not(.admin-page) footer h3, body:not(.admin-page) footer h4,
+body:not(.admin-page) footer h5, body:not(.admin-page) footer h6 { color: #fff !important; }
+body:not(.admin-page) footer p, body:not(.admin-page) footer a { color: #dcecf4 !important; }
+
+/* Patient profile and edit-profile: align with the new theme and keep compact. */
+.patient-profile-page,
+.edit-profile-page {
+  min-height: 70vh !important; padding: 30px 16px 46px !important;
+  background: transparent !important;
+}
+.patient-profile-shell { max-width: 880px !important; }
+.ep-wrap { max-width: 840px !important; }
+.patient-profile-intro { margin-bottom: 17px !important; }
+.patient-profile-intro h1, .ep-heading h1 { font-size: clamp(26px,3vw,32px) !important; letter-spacing: -.035em !important; color: #183e59 !important; }
+.patient-profile-banner, .ep-banner {
+  padding: 19px 21px !important; border-radius: 15px !important;
+  background: linear-gradient(120deg,#e8f4fb,#e8f8f1) !important;
+  border: 1px solid #d3e7ed !important; color: #183e59 !important;
+}
+.patient-profile-card, .ep-card { padding: 17px !important; }
+.patient-profile-card-heading { padding: 0 0 12px !important; margin-bottom: 13px !important; border-bottom: 1px solid #e2edf1 !important; }
+.patient-profile-card-heading h2 { color: #1a4664 !important; font-size: 1.05rem !important; }
+.ep-heading { margin-bottom: 17px !important; }
+.ep-heading .eyebrow { color: #168f94 !important; letter-spacing: 1.5px !important; }
+.ep-form { gap: 15px !important; }
+.ep-section-title { color: #1a4664 !important; font-size: 1.03rem !important; }
+.ep-avatar { background: linear-gradient(135deg,#1769aa,#169eaa,#35ad78) !important; color: #fff !important; box-shadow: 0 8px 20px rgba(23,105,170,.16) !important; }
+.ep-avatar img { object-fit: cover !important; }
+.ep-btn-save { background: linear-gradient(115deg,#1769aa,#168fa3) !important; color: #fff !important; }
+.ep-btn-cancel { background: #fff !important; }
+
+/* Admin gets the same palette but keeps its own layout. */
+body.admin-page { background: #f2f7fa !important; color: #18374e !important; }
+.admin-page .sidebar { background: linear-gradient(180deg,#123b60,#1769aa 65%,#168f94) !important; }
+.admin-page .sidebar a { color: #e2f1f7 !important; border-radius: 9px !important; transition: background .2s,color .2s,transform .2s !important; }
+.admin-page .sidebar a:hover, .admin-page .sidebar a.active { background: rgba(173,245,216,.17) !important; color: #bdf7df !important; transform: translateX(2px); }
+.admin-page .admin-top { background: rgba(255,255,255,.92) !important; color: #18374e !important; border-bottom: 1px solid #dce9ef !important; }
+.admin-page .admin-content { padding: 20px !important; }
+.admin-page .admin-content .card,
+.admin-page .admin-content .panel,
+.admin-page .admin-content .dashboard-panel,
+.admin-page .admin-content .metric,
+.admin-page .admin-content .content-card,
+.admin-page .admin-content .table-responsive {
+  background: #fff !important; color: #18374e !important; border: 1px solid #dce9ef !important;
+  border-radius: 13px !important; box-shadow: 0 7px 22px rgba(24,73,103,.055) !important;
+}
+.admin-page .admin-content .card-body { padding: 16px !important; }
+.admin-page .admin-content .btn { min-height: 37px !important; padding: 8px 13px !important; border-radius: 9px !important; font-size: .88rem !important; }
+.admin-page .admin-content .btn-primary { background: linear-gradient(115deg,#1769aa,#168fa3) !important; border: 0 !important; }
+.admin-page .admin-content .btn-success { background: linear-gradient(115deg,#2c9d67,#159e9a) !important; border: 0 !important; }
+.admin-page .admin-content .form-control,
+.admin-page .admin-content .form-select,
+.admin-page .admin-content input:not([type=checkbox]):not([type=radio]):not([type=hidden]),
+.admin-page .admin-content textarea,
+.admin-page .admin-content select { background: #fff !important; color: #18374e !important; border: 1px solid #cddfe8 !important; border-radius: 9px !important; }
+.admin-page .admin-content .table thead th { background: #eaf4f8 !important; color: #1769aa !important; }
+.admin-page .admin-content .table td { color: #35566a !important; }
+
+@media (max-width: 991.98px) {
+  body:not(.admin-page) .clinic-nav { background: rgba(13,55,85,.94) !important; }
+  .clinic-nav .navbar-collapse { margin-top: 9px; padding: 10px; border-radius: 13px; background: rgba(11,48,76,.97); border: 1px solid rgba(255,255,255,.12); }
+  .clinic-nav .navbar-nav { align-items: stretch !important; }
+  .clinic-nav .nav-link { display: flex !important; width: 100%; }
+  .clinic-nav .btn { width: 100%; margin: 5px 0 !important; }
+  body:not(.admin-page) .hero { padding: 116px 0 42px !important; }
+  body:not(.admin-page) .hero-art { max-width: none !important; min-height: 260px !important; height: 280px !important; }
+}
+@media (max-width: 575.98px) {
+  body:not(.admin-page) .hero { padding: 106px 0 34px !important; }
+  body:not(.admin-page) .hero h1 { font-size: 2.15rem !important; }
+  body:not(.admin-page) .hero .d-flex { gap: 10px !important; }
+  body:not(.admin-page) .hero .btn { width: 100%; }
+  body:not(.admin-page) .section { padding: 31px 0 !important; }
+  body:not(.admin-page) .card-body { padding: 14px !important; }
+  .patient-profile-page, .edit-profile-page { padding: 22px 12px 34px !important; }
+  .patient-profile-banner, .ep-banner { padding: 15px !important; }
+  .patient-profile-card, .ep-card { padding: 13px !important; }
+  .admin-page .admin-content { padding: 12px !important; }
+}
+
+/* =========================================================
+   PREMIUM BLUE — FINAL COHESIVE REDESIGN
+   Full-site background, transparent navigation, compact cards,
+   consistent controls, patient pages and admin dashboard.
+========================================================= */
+:root {
+  --clinic-ink: #163653;
+  --clinic-muted: #617b91;
+  --clinic-blue: #1768b2;
+  --clinic-blue-deep: #104b83;
+  --clinic-teal: #179da5;
+  --clinic-green: #31a874;
+  --clinic-line: #dce8f2;
+  --clinic-card: rgba(255,255,255,.94);
+  --clinic-shadow: 0 10px 28px rgba(27,75,117,.075);
+}
+
+html { min-height: 100%; background: #f2f8fc !important; }
+body:not(.admin-page) {
+  min-height: 100vh !important;
+  color: var(--clinic-ink) !important;
+  background:
+    radial-gradient(ellipse 440px 330px at 0% 5%, rgba(68,166,230,.15), transparent 72%),
+    radial-gradient(ellipse 520px 360px at 100% 22%, rgba(64,190,151,.13), transparent 72%),
+    radial-gradient(ellipse 480px 340px at 70% 78%, rgba(72,157,220,.08), transparent 72%),
+    #f4f8fc !important;
+  background-attachment: fixed !important;
+  overflow-x: clip;
+}
+body:not(.admin-page) main { background: transparent !important; min-height: 55vh; }
+body:not(.admin-page) main > section:not(.hero) { background: transparent !important; }
+body:not(.admin-page) section.bg-white,
+body:not(.admin-page) .section.bg-white,
+body:not(.admin-page) .bg-light { background: transparent !important; }
+body:not(.admin-page) .container { max-width: 1160px !important; }
+
+/* Full-bleed glass navbar: no rounded white block or side gaps. */
+body:not(.admin-page) .clinic-nav {
+  position: fixed !important;
+  top: 0 !important; left: 0 !important; right: 0 !important;
+  width: 100% !important; max-width: none !important;
+  margin: 0 !important; border-radius: 0 !important;
+  min-height: 76px !important;
+  padding: 9px max(18px, calc((100vw - 1160px)/2)) !important;
+  background: rgba(244,249,255,.76) !important;
+  border: 0 !important;
+  border-bottom: 1px solid rgba(189,213,231,.65) !important;
+  box-shadow: 0 8px 24px rgba(24,72,112,.065) !important;
+  backdrop-filter: blur(18px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(150%) !important;
+  z-index: 1030 !important;
+  transition: background .25s ease, box-shadow .25s ease !important;
+}
+.clinic-nav .navbar-brand {
+  display: inline-flex !important; align-items: center !important; gap: 8px !important;
+  color: #17496f !important; font-size: 1.16rem !important; letter-spacing: -.035em !important;
+  text-decoration: none !important;
+}
+.clinic-nav .navbar-brand > span:last-child { color: #168aa1 !important; margin-left: -7px !important; }
+.clinic-nav .brand-mark {
+  display: inline-grid !important; place-items: center !important;
+  width: 34px !important; height: 34px !important; border-radius: 11px !important;
+  color: #fff !important; background: linear-gradient(135deg,#1768b2,#179da5) !important;
+  box-shadow: 0 5px 14px rgba(23,104,178,.19) !important;
+}
+.clinic-nav .navbar-nav { gap: 4px !important; }
+.clinic-nav .nav-link {
+  position: relative !important; display: inline-flex !important; align-items: center !important;
+  min-height: 39px !important; padding: 9px 12px !important; margin: 0 !important;
+  border-radius: 10px !important; color: #34566f !important;
+  font-size: .9rem !important; font-weight: 650 !important; line-height: 1.2 !important;
+  text-decoration: none !important; background: transparent !important;
+  transition: color .18s ease, background .18s ease, transform .18s ease !important;
+}
+.clinic-nav .nav-link::after {
+  content: "" !important; position: absolute !important; left: 12px !important; right: 12px !important; bottom: 5px !important;
+  height: 2px !important; border-radius: 3px !important;
+  background: linear-gradient(90deg,#1768b2,#31a874) !important;
+  transform: scaleX(0) !important; transform-origin: left !important;
+  transition: transform .18s ease !important;
+}
+.clinic-nav .nav-link:hover,
+.clinic-nav .nav-link:focus-visible,
+.clinic-nav .nav-link.active {
+  color: #125f9e !important; background: rgba(217,237,250,.78) !important;
+  transform: translateY(-1px) !important;
+}
+.clinic-nav .nav-link:hover::after,
+.clinic-nav .nav-link:focus-visible::after,
+.clinic-nav .nav-link.active::after { transform: scaleX(1) !important; }
+.clinic-nav .btn, .clinic-nav a.btn {
+  min-height: 39px !important; padding: 9px 17px !important; margin-left: 3px !important;
+  border-radius: 10px !important; color: #fff !important;
+  background: linear-gradient(115deg,#1768b2,#168d9c) !important;
+  border: 0 !important; box-shadow: 0 6px 15px rgba(23,104,178,.16) !important;
+}
+.clinic-nav .btn:hover, .clinic-nav a.btn:hover { filter: brightness(1.05) !important; transform: translateY(-1px) !important; }
+.clinic-nav .navbar-toggler { border: 1px solid #cbdfea !important; border-radius: 10px !important; color: #1768b2 !important; padding: 7px 10px !important; box-shadow: none !important; }
+
+/* Homepage: soft abstract blue-green shapes and full-width hero surface. */
+body:not(.admin-page) .hero {
+  position: relative !important; isolation: isolate !important; overflow: hidden !important;
+  width: 100% !important; max-width: none !important; margin: 0 !important;
+  padding: 136px 0 64px !important; border-radius: 0 !important;
+  background:
+    radial-gradient(ellipse 500px 390px at 5% 24%, rgba(72,163,231,.20), transparent 70%),
+    radial-gradient(ellipse 560px 420px at 94% 12%, rgba(49,183,139,.17), transparent 70%),
+    linear-gradient(115deg,rgba(244,249,255,.94),rgba(235,247,250,.86) 55%,rgba(237,249,243,.9)) !important;
+  border: 0 !important; box-shadow: none !important;
+}
+body:not(.admin-page) .hero::before,
+body:not(.admin-page) .hero::after {
+  content: "" !important; position: absolute !important; z-index: -1 !important;
+  pointer-events: none !important; border-radius: 50% !important; filter: blur(1px) !important;
+}
+body:not(.admin-page) .hero::before {
+  width: 440px !important; height: 440px !important; top: -220px !important; right: 8% !important;
+  border: 1px solid rgba(23,104,178,.12) !important;
+  background: radial-gradient(circle at 35% 60%,rgba(72,163,231,.13),rgba(72,163,231,.02) 62%,transparent 70%) !important;
+  box-shadow: 0 0 0 35px rgba(23,104,178,.025),0 0 0 75px rgba(23,104,178,.018) !important;
+}
+body:not(.admin-page) .hero::after {
+  width: 320px !important; height: 320px !important; bottom: -205px !important; left: 42% !important;
+  background: radial-gradient(circle,rgba(49,168,116,.15),rgba(49,168,116,.02) 70%,transparent 74%) !important;
+  box-shadow: 0 0 0 28px rgba(49,168,116,.025),0 0 0 58px rgba(49,168,116,.018) !important;
+}
+body:not(.admin-page) .hero > .container { position: relative !important; z-index: 1 !important; }
+body:not(.admin-page) .hero h1 { max-width: 640px !important; color: #153f64 !important; font-size: clamp(2.35rem,4.2vw,3.65rem) !important; line-height: 1.12 !important; letter-spacing: -.055em !important; }
+body:not(.admin-page) .hero p { max-width: 570px !important; color: #5d778b !important; font-size: 1.02rem !important; line-height: 1.75 !important; }
+body:not(.admin-page) .section-kicker { color: #168e9d !important; font-weight: 800 !important; letter-spacing: .12em !important; }
+body:not(.admin-page) .hero-art { border-radius: 24px !important; }
+body:not(.admin-page) .hero .btn { min-height: 43px !important; padding: 11px 18px !important; font-size: .92rem !important; }
+body:not(.admin-page) .hero .btn-outline-dark { color: #1768a9 !important; background: rgba(255,255,255,.72) !important; border: 1px solid #bfd8e8 !important; }
+
+/* Reduce oversized whitespace and keep page sections sitting on the same canvas. */
+body:not(.admin-page) .section { padding-top: 42px !important; padding-bottom: 42px !important; }
+body:not(.admin-page) .section.pt-5 { padding-top: 35px !important; }
+body:not(.admin-page) .section-title { color: #173f60 !important; font-size: clamp(1.55rem,2.6vw,2.05rem) !important; letter-spacing: -.035em !important; }
+body:not(.admin-page) .row { --bs-gutter-x: 1.25rem; --bs-gutter-y: 1.25rem; }
+body:not(.admin-page) .card,
+body:not(.admin-page) .stat-card,
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .review-card,
+body:not(.admin-page) .info-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item,
+body:not(.admin-page) .panel,
+body:not(.admin-page) .auth-card,
+body:not(.admin-page) .appointment-form,
+body:not(.admin-page) .appointment-help,
+body:not(.admin-page) .patient-profile-card,
+body:not(.admin-page) .ep-card,
+body:not(.admin-page) .doctor-profile-card,
+body:not(.admin-page) .department-detail-card {
+  background: var(--clinic-card) !important; color: var(--clinic-ink) !important;
+  border: 1px solid rgba(204,223,237,.9) !important; border-radius: 15px !important;
+  box-shadow: var(--clinic-shadow) !important;
+}
+body:not(.admin-page) .card-body { padding: 16px !important; }
+body:not(.admin-page) .stat-card { min-height: 78px !important; padding: 13px 15px !important; }
+body:not(.admin-page) .stat-number { font-size: clamp(1.45rem,2.4vw,1.85rem) !important; color: #1768b2 !important; }
+body:not(.admin-page) .doctor-card,
+body:not(.admin-page) .dept-card,
+body:not(.admin-page) .service-card,
+body:not(.admin-page) .review-card,
+body:not(.admin-page) .info-card,
+body:not(.admin-page) .contact-card,
+body:not(.admin-page) .faq-item { padding: 15px !important; }
+body:not(.admin-page) .card:hover,
+body:not(.admin-page) .doctor-card:hover,
+body:not(.admin-page) .dept-card:hover,
+body:not(.admin-page) .service-card:hover,
+body:not(.admin-page) .review-card:hover,
+body:not(.admin-page) .info-card:hover,
+body:not(.admin-page) .contact-card:hover,
+body:not(.admin-page) .faq-item:hover,
+body:not(.admin-page) .stat-card:hover {
+  border-color: rgba(23,137,170,.36) !important; box-shadow: 0 14px 30px rgba(27,75,117,.10) !important;
+  transform: translateY(-3px) !important; transition: transform .2s ease,box-shadow .2s ease,border-color .2s ease !important;
+}
+body:not(.admin-page) h1,body:not(.admin-page) h2,body:not(.admin-page) h3,
+body:not(.admin-page) h4,body:not(.admin-page) h5,body:not(.admin-page) h6,
+body:not(.admin-page) .card-title { color: #173f60 !important; }
+body:not(.admin-page) p,body:not(.admin-page) .text-muted,
+body:not(.admin-page) .card-text { color: #617b91 !important; }
+
+/* One button system across all frontend pages. */
+body:not(.admin-page) .btn,
+body:not(.admin-page) button:not(.clinic-toast-close),
+body:not(.admin-page) .ep-btn,
+body:not(.admin-page) .patient-edit-top,
+body:not(.admin-page) .patient-home-button {
+  min-height: 38px !important; padding: 9px 15px !important; border-radius: 10px !important;
+  font-size: .89rem !important; font-weight: 700 !important; line-height: 1.25 !important;
+  transition: background .18s ease,box-shadow .18s ease,transform .18s ease,border-color .18s ease !important;
+}
+body:not(.admin-page) .btn-primary,
+body:not(.admin-page) .appointment-submit,
+body:not(.admin-page) .ep-btn-save,
+body:not(.admin-page) .patient-edit-top {
+  color: #fff !important; background: linear-gradient(115deg,#1768b2 0%,#168eaa 100%) !important;
+  border: 1px solid transparent !important; box-shadow: 0 6px 15px rgba(23,104,178,.16) !important;
+}
+body:not(.admin-page) .btn-success { color: #fff !important; background: linear-gradient(115deg,#2c9f6a,#168f9a) !important; border: 1px solid transparent !important; }
+body:not(.admin-page) .btn-outline-primary,
+body:not(.admin-page) .btn-outline-dark,
+body:not(.admin-page) .btn-outline-secondary,
+body:not(.admin-page) .ep-btn-cancel,
+body:not(.admin-page) .patient-home-button {
+  color: #1768a9 !important; background: rgba(255,255,255,.76) !important; border: 1px solid #c4dbea !important;
+}
+body:not(.admin-page) .btn-primary:hover,
+body:not(.admin-page) .btn-success:hover,
+body:not(.admin-page) .appointment-submit:hover,
+body:not(.admin-page) .ep-btn-save:hover,
+body:not(.admin-page) .patient-edit-top:hover {
+  color: #fff !important; filter: saturate(1.08) brightness(1.03) !important;
+  box-shadow: 0 9px 20px rgba(23,104,178,.23) !important; transform: translateY(-2px) !important;
+}
+body:not(.admin-page) .btn-outline-primary:hover,
+body:not(.admin-page) .btn-outline-dark:hover,
+body:not(.admin-page) .btn-outline-secondary:hover,
+body:not(.admin-page) .ep-btn-cancel:hover,
+body:not(.admin-page) .patient-home-button:hover {
+  color: #125b98 !important; background: #eaf5fc !important; border-color: #8ebbd8 !important; transform: translateY(-1px) !important;
+}
+body:not(.admin-page) .btn:focus-visible,body:not(.admin-page) button:focus-visible,
+body:not(.admin-page) .clinic-nav a:focus-visible { outline: 3px solid rgba(23,157,165,.3) !important; outline-offset: 3px !important; }
+
+/* Consistent forms, tables, badges and readable validation feedback. */
+body:not(.admin-page) .form-control,
+body:not(.admin-page) .form-select,
+body:not(.admin-page) input:not([type=checkbox]):not([type=radio]):not([type=submit]):not([type=button]):not([type=hidden]),
+body:not(.admin-page) textarea,body:not(.admin-page) select {
+  color: #193c58 !important; background: rgba(255,255,255,.96) !important;
+  border: 1px solid #cbdde9 !important; border-radius: 9px !important;
+  box-shadow: none !important; min-height: 40px !important; padding: 9px 11px !important;
+}
+body:not(.admin-page) textarea { min-height: 92px !important; }
+body:not(.admin-page) input[type=file] { padding: 7px !important; }
+body:not(.admin-page) .form-control:focus,body:not(.admin-page) .form-select:focus,
+body:not(.admin-page) input:focus,body:not(.admin-page) textarea:focus,body:not(.admin-page) select:focus {
+  border-color: #168fa3 !important; box-shadow: 0 0 0 3px rgba(22,143,163,.11) !important;
+}
+body:not(.admin-page) label,body:not(.admin-page) .form-label,
+body:not(.admin-page) .ep-field label { color: #31546d !important; font-size: .87rem !important; font-weight: 700 !important; }
+body:not(.admin-page) .table { --bs-table-bg: rgba(255,255,255,.96); --bs-table-color: #193c58; --bs-table-border-color: #e1ebf2; }
+body:not(.admin-page) .table thead th { background: #eaf4fb !important; color: #175e99 !important; font-size: .82rem !important; }
+body:not(.admin-page) .table td { color: #3e5f76 !important; }
+body:not(.admin-page) .breadcrumb { display: none !important; }
+
+/* Patient profile: tighter layout, reliable picture preview, consistent actions. */
+.patient-profile-page,.edit-profile-page {
+  min-height: 65vh !important; padding: 31px 14px 45px !important; background: transparent !important;
+}
+.patient-profile-shell { max-width: 940px !important; }
+.ep-wrap { max-width: 820px !important; }
+.patient-profile-intro,.ep-heading { margin-bottom: 16px !important; }
+.patient-profile-intro h1,.ep-heading h1 { font-size: clamp(26px,3vw,32px) !important; letter-spacing: -.04em !important; }
+.patient-profile-banner,.ep-banner {
+  padding: 17px 19px !important; border-radius: 15px !important;
+  background: linear-gradient(115deg,rgba(229,242,253,.96),rgba(230,248,241,.95)) !important;
+  border: 1px solid #d1e4ee !important; box-shadow: 0 8px 22px rgba(27,75,117,.055) !important;
+}
+.patient-profile-card,.ep-card { padding: 15px !important; }
+.patient-stat-grid { gap: 12px !important; }
+.patient-stat-card { padding: 13px !important; min-height: 78px !important; border-radius: 12px !important; }
+.patient-avatar,.ep-avatar { width: 76px !important; height: 76px !important; flex: 0 0 76px !important; border: 3px solid rgba(255,255,255,.92) !important; background: linear-gradient(135deg,#1768b2,#168fa3,#31a874) !important; box-shadow: 0 5px 16px rgba(23,104,178,.15) !important; }
+.patient-avatar img,.ep-avatar img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: inherit !important; }
+.ep-form { gap: 13px !important; }
+.ep-grid { gap: 13px !important; }
+.ep-section-title { margin: 4px 0 0 !important; font-size: 1rem !important; }
+.ep-field input,.ep-field select,.ep-field textarea { width: 100% !important; }
+.ep-actions { display: flex !important; justify-content: flex-end !important; gap: 10px !important; padding-top: 6px !important; }
+.ep-btn-save { border: 0 !important; }
+
+/* Admin pages: same premium-blue identity, compact workspace and cards. */
+body.admin-page {
+  min-height: 100vh !important; color: var(--clinic-ink) !important;
+  background: radial-gradient(ellipse 500px 360px at 100% 0%,rgba(64,190,151,.10),transparent 70%),
+              radial-gradient(ellipse 480px 340px at 0% 100%,rgba(72,163,231,.09),transparent 70%),#f2f7fb !important;
+}
+.admin-page .sidebar { background: linear-gradient(180deg,#123e69 0%,#175b91 65%,#167f91 100%) !important; border: 0 !important; box-shadow: 5px 0 24px rgba(19,65,102,.09) !important; }
+.admin-page .sidebar .h4 { color: #fff !important; }
+.admin-page .sidebar a,.admin-page .side-link {
+  display: flex !important; align-items: center !important; gap: 10px !important;
+  color: #d9eaf7 !important; margin: 3px 9px !important; padding: 10px 12px !important;
+  border-radius: 9px !important; font-size: .9rem !important;
+  transition: background .18s ease,color .18s ease,transform .18s ease !important;
+}
+.admin-page .sidebar a:hover,.admin-page .side-link:hover,
+.admin-page .sidebar a.active,.admin-page .side-link.active {
+  color: #fff !important; background: rgba(177,237,225,.17) !important; transform: translateX(2px) !important;
+}
+.admin-page .admin-main { background: transparent !important; }
+.admin-page .admin-top { background: rgba(255,255,255,.86) !important; border-bottom: 1px solid #dce8f1 !important; box-shadow: 0 5px 18px rgba(27,75,117,.045) !important; backdrop-filter: blur(12px) !important; }
+.admin-page .admin-content { padding: 18px !important; background: transparent !important; }
+.admin-page .admin-content .card,.admin-page .admin-content .panel,
+.admin-page .admin-content .dashboard-panel,.admin-page .admin-content .metric,
+.admin-page .admin-content .content-card,.admin-page .admin-content .table-responsive,
+.admin-page .admin-content .dashboard-welcome,.admin-page .admin-content form {
+  color: var(--clinic-ink) !important; background: rgba(255,255,255,.96) !important;
+  border: 1px solid #dce8f1 !important; border-radius: 13px !important;
+  box-shadow: 0 8px 22px rgba(27,75,117,.055) !important;
+}
+.admin-page .admin-content .card-body { padding: 15px !important; }
+.admin-page .admin-content .panel,.admin-page .admin-content .dashboard-panel,
+.admin-page .admin-content .metric,.admin-page .admin-content .content-card { padding: 15px !important; }
+.admin-page .admin-content h1,.admin-page .admin-content h2,.admin-page .admin-content h3,
+.admin-page .admin-content h4,.admin-page .admin-content h5 { color: #173f60 !important; }
+.admin-page .admin-content p,.admin-page .admin-content .text-muted { color: #617b91 !important; }
+.admin-page .admin-content .btn { min-height: 36px !important; padding: 8px 12px !important; border-radius: 9px !important; font-size: .86rem !important; font-weight: 700 !important; }
+.admin-page .admin-content .btn-primary { background: linear-gradient(115deg,#1768b2,#168eaa) !important; border: 0 !important; }
+.admin-page .admin-content .btn-success { background: linear-gradient(115deg,#2c9f6a,#168f9a) !important; border: 0 !important; }
+.admin-page .admin-content .form-control,.admin-page .admin-content .form-select,
+.admin-page .admin-content input:not([type=checkbox]):not([type=radio]):not([type=hidden]),
+.admin-page .admin-content textarea,.admin-page .admin-content select {
+  min-height: 38px !important; color: #193c58 !important; background: #fff !important;
+  border: 1px solid #cbdde9 !important; border-radius: 8px !important; box-shadow: none !important;
+}
+.admin-page .admin-content .table { --bs-table-bg: #fff; --bs-table-color: #193c58; --bs-table-border-color: #e1ebf2; }
+.admin-page .admin-content .table thead th { background: #eaf4fb !important; color: #175e99 !important; font-size: .82rem !important; }
+.admin-page .admin-content .table td { color: #3e5f76 !important; }
+.admin-page .admin-content .btn-primary:hover,.admin-page .admin-content .btn-success:hover { transform: translateY(-1px) !important; box-shadow: 0 7px 16px rgba(23,104,178,.16) !important; }
+
+/* Footer aligns with the blue palette, without creating a bright band above it. */
+body:not(.admin-page) footer,body:not(.admin-page) .footer,body:not(.admin-page) .clinic-footer {
+  background: linear-gradient(115deg,#123e69 0%,#175b91 65%,#167f91 100%) !important;
+  color: #dcecf7 !important; border: 0 !important; margin-top: 20px !important;
+}
+body:not(.admin-page) footer h1,body:not(.admin-page) footer h2,body:not(.admin-page) footer h3,
+body:not(.admin-page) footer h4,body:not(.admin-page) footer h5 { color: #fff !important; }
+body:not(.admin-page) footer p,body:not(.admin-page) footer a { color: #dcecf7 !important; }
+
+@media (max-width: 991.98px) {
+  body:not(.admin-page) .clinic-nav { padding: 9px 18px !important; background: rgba(244,249,255,.92) !important; }
+  .clinic-nav .navbar-collapse { margin-top: 9px !important; padding: 10px !important; border-radius: 13px !important; background: rgba(249,252,255,.98) !important; border: 1px solid #dce8f1 !important; box-shadow: 0 12px 26px rgba(27,75,117,.10) !important; }
+  .clinic-nav .navbar-nav { align-items: stretch !important; gap: 3px !important; }
+  .clinic-nav .nav-link { display: flex !important; width: 100% !important; }
+  .clinic-nav .btn { width: 100% !important; margin: 5px 0 !important; justify-content: center !important; }
+  body:not(.admin-page) .hero { padding: 118px 0 42px !important; }
+  body:not(.admin-page) .hero-art { min-height: 250px !important; height: 260px !important; }
+  .admin-page .admin-content { padding: 15px !important; }
+}
+@media (max-width: 575.98px) {
+  body:not(.admin-page) .clinic-nav { min-height: 66px !important; }
+  body:not(.admin-page) .hero { padding: 103px 0 32px !important; }
+  body:not(.admin-page) .hero h1 { font-size: 2.15rem !important; }
+  body:not(.admin-page) .hero .d-flex { gap: 9px !important; }
+  body:not(.admin-page) .hero .btn { width: 100% !important; }
+  body:not(.admin-page) .section { padding: 29px 0 !important; }
+  body:not(.admin-page) .row { --bs-gutter-x: .9rem; --bs-gutter-y: .9rem; }
+  body:not(.admin-page) .card-body { padding: 13px !important; }
+  .patient-profile-page,.edit-profile-page { padding: 23px 12px 32px !important; }
+  .patient-profile-banner,.ep-banner { padding: 13px !important; }
+  .patient-profile-card,.ep-card { padding: 12px !important; }
+  .ep-actions { flex-wrap: wrap !important; }
+  .ep-actions .ep-btn { flex: 1 1 130px !important; text-align: center !important; justify-content: center !important; }
+  .admin-page .admin-content { padding: 11px !important; }
+  .admin-page .admin-content .card-body { padding: 12px !important; }
+}

@@ -1,0 +1,272 @@
+/* =========================================================
+   MODERN CLINIC — DOCTOR MANAGEMENT PAGE
+   Dark midnight theme — page-specific styling only
+========================================================= */
+
+body.admin-page .admin-doctors-page {
+    color: #edf5ff;
+}
+
+/* Page heading */
+body.admin-page .admin-doctors-page .section-title {
+    color: #edf5ff !important;
+    font-weight: 750;
+    letter-spacing: -0.4px;
+}
+
+body.admin-page .admin-doctors-page .text-secondary {
+    color: #a0b4c9 !important;
+}
+
+/* Main table panel */
+body.admin-page .admin-doctors-page .table-card {
+    background: linear-gradient(145deg, #10243a, #0b192b) !important;
+    border: 1px solid rgba(120, 164, 210, 0.18) !important;
+    border-radius: 18px !important;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.22) !important;
+    overflow: hidden;
+}
+
+/* Table base */
+body.admin-page .admin-doctors-page table,
+body.admin-page .admin-doctors-page .table {
+    --bs-table-bg: transparent;
+    --bs-table-color: #e6f0ff;
+    --bs-table-border-color: rgba(151, 180, 215, 0.13);
+    --bs-table-hover-bg: rgba(77, 163, 255, 0.07);
+    --bs-table-hover-color: #ffffff;
+
+    margin-bottom: 0;
+    background: transparent !important;
+    color: #e6f0ff !important;
+}
+
+/* Table header */
+body.admin-page .admin-doctors-page .table thead th {
+    background: #142b43 !important;
+    color: #9ecaff !important;
+    border-bottom: 1px solid rgba(77, 163, 255, 0.2) !important;
+    padding: 19px 18px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    white-space: nowrap;
+}
+
+/* Table cells */
+body.admin-page .admin-doctors-page .table tbody td {
+    background: transparent !important;
+    color: #dce9f8 !important;
+    padding: 19px 18px;
+    border-bottom: 1px solid rgba(151, 180, 215, 0.11) !important;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+body.admin-page .admin-doctors-page .table tbody tr {
+    background: transparent !important;
+    transition: background 0.2s ease;
+}
+
+body.admin-page .admin-doctors-page .table tbody tr:hover {
+    background: rgba(77, 163, 255, 0.055) !important;
+}
+
+body.admin-page .admin-doctors-page .table tbody tr:last-child td {
+    border-bottom: 0 !important;
+}
+
+/* Doctor name */
+body.admin-page .admin-doctors-page .table tbody td strong {
+    display: inline-block;
+    color: #f0f6ff !important;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+/* Email and supporting text */
+body.admin-page .admin-doctors-page .table tbody td .small {
+    color: #91a9c2 !important;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* Add Doctor button */
+body.admin-page .admin-doctors-page .btn-primary {
+    background: linear-gradient(110deg, #397ff0, #7862ff) !important;
+    border: 1px solid rgba(135, 166, 255, 0.35) !important;
+    color: #fff !important;
+    padding: 11px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 7px 20px rgba(79, 105, 255, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.admin-page .admin-doctors-page .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(79, 105, 255, 0.32);
+}
+
+/* Edit button */
+body.admin-page .admin-doctors-page .btn-outline-primary {
+    background: rgba(77, 163, 255, 0.09) !important;
+    color: #80bdff !important;
+    border: 1px solid rgba(77, 163, 255, 0.38) !important;
+}
+
+body.admin-page .admin-doctors-page .btn-outline-primary:hover {
+    background: #397ff0 !important;
+    border-color: #397ff0 !important;
+    color: #fff !important;
+}
+
+/* Delete button */
+body.admin-page .admin-doctors-page .btn-outline-danger {
+    background: rgba(255, 90, 120, 0.07) !important;
+    color: #ff8d9e !important;
+    border: 1px solid rgba(255, 90, 120, 0.3) !important;
+}
+
+body.admin-page .admin-doctors-page .btn-outline-danger:hover {
+    background: #d94260 !important;
+    border-color: #d94260 !important;
+    color: #fff !important;
+}
+
+/* Action buttons */
+body.admin-page .admin-doctors-page .btn-sm {
+    border-radius: 9px;
+    padding: 7px 11px;
+    font-size: 12px;
+    font-weight: 650;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+/* Doctor status pills */
+body.admin-page .admin-doctors-page .status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    padding: 6px 11px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 0.2px;
+    border: 1px solid transparent;
+}
+
+body.admin-page .admin-doctors-page .status-Confirmed {
+    background: rgba(50, 182, 122, 0.13) !important;
+    color: #66e0a6 !important;
+    border-color: rgba(50, 182, 122, 0.25) !important;
+}
+
+body.admin-page .admin-doctors-page .status-Rejected {
+    background: rgba(255, 105, 125, 0.12) !important;
+    color: #ff9aa9 !important;
+    border-color: rgba(255, 105, 125, 0.25) !important;
+}
+
+/* Empty table state */
+body.admin-page .admin-doctors-page .table tbody td[colspan] {
+    padding: 55px 20px !important;
+    color: #edf5ff !important;
+}
+
+body.admin-page .admin-doctors-page .table tbody td[colspan] > i {
+    color: #7c9dbf !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+    body.admin-page .admin-doctors-page .table-card {
+        border-radius: 13px !important;
+    }
+
+    body.admin-page .admin-doctors-page .table thead th,
+    body.admin-page .admin-doctors-page .table tbody td {
+        padding: 14px 12px;
+    }
+
+    body.admin-page .admin-doctors-page .btn-sm {
+        padding: 7px 9px;
+    }
+}
+
+/* =========================================================
+   DOCTORS PAGE — ACTION BUTTON POLISH
+========================================================= */
+
+body.admin-page .admin-doctors-page td.text-end > div {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px !important;
+    flex-wrap: nowrap !important;
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-sm {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 88px;
+    min-height: 36px;
+    padding: 8px 12px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+    white-space: nowrap;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    transition: background 0.2s ease, border-color 0.2s ease,
+                color 0.2s ease, transform 0.2s ease;
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-outline-primary {
+    background: rgba(77, 163, 255, 0.10) !important;
+    border: 1px solid rgba(77, 163, 255, 0.35) !important;
+    color: #83c0ff !important;
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-outline-primary:hover {
+    background: #397ff0 !important;
+    border-color: #397ff0 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-outline-danger {
+    background: rgba(255, 91, 117, 0.08) !important;
+    border: 1px solid rgba(255, 91, 117, 0.32) !important;
+    color: #ff9aaa !important;
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-outline-danger:hover {
+    background: #d94360 !important;
+    border-color: #d94360 !important;
+    color: #ffffff !important;
+    transform: translateY(-1px);
+}
+
+body.admin-page .admin-doctors-page td.text-end .btn-sm i {
+    margin: 0 !important;
+    font-size: 11px;
+}
+
+@media (max-width: 767px) {
+    body.admin-page .admin-doctors-page td.text-end > div {
+        flex-wrap: wrap !important;
+    }
+
+    body.admin-page .admin-doctors-page td.text-end .btn-sm {
+        min-width: 78px;
+    }
+}
